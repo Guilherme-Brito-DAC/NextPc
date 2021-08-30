@@ -1,7 +1,24 @@
+body{
+  background-image: url("./imgs/backImg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
 .header{
   text-align: center;
   display: flex;
   padding: 10px;
   justify-content: space-between;
   margin-left: 70em;
+}
+
+.home{
+  text-align: center;
+  margin-top: 10%;
+}
+
+.homeIntro{
+  color: white;
+  margin-bottom: 7.5em;
 }

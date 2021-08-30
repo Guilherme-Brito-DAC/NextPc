@@ -1,33 +1,20 @@
 import './App.css';
 import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import Header from './Header';
 
 function App() {
   return (
-    <div className="App">
-      <div class="header">
-        <Button variant="contained">Home</Button>
-        <Button variant="contained">Meu PC</Button>
-        <Button variant="contained">Procurar Peças</Button>
-        <Button variant="contained">Contato</Button>
-        <Button variant="contained">Sobre</Button>
-        <div class="account_button">
-          <Button>
-            Minha Conta
+    <>
+      <Header></Header>
+      <div className="Home">
+        <div className="home">
+          <h1 className="homeIntro">O computador dos seus sonhos pode estar e apenas alguns cliques de distância!</h1>
+          <Button size="large" variant="contained" color="primary" style={{fontWeight: 'bold'}}>
+            Comece agora !
           </Button>
-          <Menu>
-            <MenuItem onClick="">Editar</MenuItem>
-            <MenuItem onClick="">Sair</MenuItem>
-          </Menu>
         </div>
-
-
-
-
-
       </div>
-    </div>
+    </>
   )
 }
 export default App;
