@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Nextgear.Models;
+using Nextgear.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,28 +13,63 @@ namespace Nextgear.Controllers
     [Route("api/usuarios")]
     public class UsuarioController : Controller
     {
-        [HttpGet]
-        public ActionResult Details(int id)
+        private readonly IUsuarioRepository IUsuarioRepository;
+
+        public UsuarioController(IUsuarioRepository _IUsuarioRepository)
         {
-            return Ok("Temoteo é baitola");
+            IUsuarioRepository = _IUsuarioRepository;
+        }
+
+        [HttpGet]
+        public IActionResult RecuperarTudo()
+        {
+            return Ok(IUsuarioRepository.RecuperarTodosUsuario());
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult RecuperarId(int id)
+        {
+            var usuario = IUsuarioRepository.RecuperarPorUsuario(id);
+
+            if (usuario == null) return NotFound();
+
+            return Ok(usuario);
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(IFormCollection collection)
+        public IActionResult Cadastrar([FromForm] Usuario usuario)
         {
-            return Ok("Cadastrado");
+            if (ModelState.IsValid)
+            {
+                IUsuarioRepository.CadastrarUsuario(usuario);
+                return Ok();
+            }
+
+            return BadRequest();
         }
 
         [HttpPut]
-        public ActionResult Editar(int id, IFormCollection collection)
+        public IActionResult Editar([FromForm] Usuario usuario, IFormCollection collection)
         {
-            return Ok("Atualizar");
+            if (ModelState.IsValid)
+            {
+                IUsuarioRepository.EditarUsuario(usuario);
+                return Ok();
+            }
+
+            return BadRequest();
         }
 
         [HttpDelete]
-        public ActionResult Deletar(int id, IFormCollection collection)
+        public IActionResult Deletar([FromForm] Usuario usuario, IFormCollection collection)
         {
-            return Ok("Deletado");
+            if (ModelState.IsValid)
+            {
+                IUsuarioRepository.DeletarUsuario(usuario);
+                return Ok();
+            }
+
+            return BadRequest();
         }
     }
 }

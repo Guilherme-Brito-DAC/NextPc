@@ -1,13 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Nextgear.Models;
 
 namespace Nextgear
 {
     public class ApplicationContext : DbContext
     {
+        public DbSet<Usuario> Usuarios { get; set; }
 
+        public ApplicationContext(DbContextOptions<ApplicationContext> options): base(options) 
+        {
+
+        }
     }
 }
