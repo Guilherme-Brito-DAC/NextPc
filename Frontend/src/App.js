@@ -1,20 +1,22 @@
-import './App.css';
-import Button from '@material-ui/core/Button';
-import Header from './Header';
+import { BrowserRouter as Router , Switch , Route } from 'react-router-dom' 
+import Header from './Components/Header'
+import Pecas from './Components/Pecas'
+import Home from './Components/Home'
+import Comunidade from './Components/Comunidade'
+import PCs from './Components/PCs'
+import './App.css'
 
 function App() {
   return (
     <>
-      <Header></Header>
-      <div className="Home">
-        <div className="home">
-          <h1 className="homeIntro">O computador dos seus sonhos pode estar e apenas alguns cliques de distância!</h1>
-          <Button size="large" variant="contained" color="primary" style={{fontWeight: 'bold'}}>
-            Comece agora !
-          </Button>
-        </div>
-      </div>
+      <Router>
+        <Header />
+          <Route exact path="/" component={Home} />
+          <Route path="/pc" component={PCs} />
+          <Route path="/pecas" component={Pecas} />
+          <Route path="/comunidade" component={Comunidade} />
+      </Router>
     </>
   )
 }
-export default App;
+export default App

@@ -32,7 +32,7 @@ namespace Nextgear.Models
         [MinLength(5, ErrorMessage = "A sua senha tem que ter pelo menos 5 dígitos")]
         [MaxLength(250, ErrorMessage = "O seu nome tem que ter menos que 250 dígitos")]
         [DataType(DataType.Password)]
-        [Display(Name = "Nome")]
+        [Display(Name = "Senha")]
         public string senha { get; set; }
 
         [Required]
