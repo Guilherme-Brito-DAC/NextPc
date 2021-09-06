@@ -1,8 +1,21 @@
+body{
+    background-image: url('../imgs/backImg.jpg');
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
 header{
     display:flex;
     width: 100%;
     align-items: center;
     justify-content: space-around;
+    border: solid 2px;
+    text-shadow: white 0px 0px 2px;
+    font-size: 20px;
+    background-size: 150px;
 }
 
 header div{
@@ -22,4 +35,9 @@ a{
 
 a:hover{
     opacity: 1;    
+}
+
+.logo{
+    width: 8%;
+    height: auto;
 }

@@ -1,0 +1,29 @@
+.pecas{
+    text-align: center;
+    padding: 5em;
+    min-height: 100%;
+    width: 50%;
+    margin-left: 20%;
+    background-color: rgba(0, 0, 0, 0.445);
+    margin-top: 3em;
+}
+
+.barraPesquisa{
+    margin-bottom: 3em;
+}
+
+.imgTitulo{
+    display: flex;
+    gap: 6em;
+}
+
+.img{
+    height: 70%;
+}
+
+.researchResult{
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.774);
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
