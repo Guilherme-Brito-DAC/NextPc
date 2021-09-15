@@ -12,6 +12,7 @@ function Pecas() {
           <FormControl className="BP">
             <Input
               id="BP"
+              placeholder="Procurar Peças..."
               startAdornment={
                 <InputAdornment position="start">
                   <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/32/000000/external-search-interface-kiranshastry-lineal-kiranshastry.png" />

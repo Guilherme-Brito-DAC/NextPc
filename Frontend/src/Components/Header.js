@@ -16,7 +16,7 @@ function Header() {
     <header>
       <link rel="shortcut icon" href="../imgs/favicon.ico" />
       <img src={Logomarca} className="logo" />
-      <div style={{textAlign: 'center', marginLeft: '11em'}}>
+      <div style={{ textAlign: 'center', marginLeft: '11em' }}>
         <Link to="/">
           <a>Início</a>
         </Link>
@@ -47,7 +47,7 @@ function Header() {
           Logar
         </Button>
         <Button variant="contained" color="secondary">
-          Cadastrar 
+          Cadastrar
         </Button>
       </div>
     </header>
