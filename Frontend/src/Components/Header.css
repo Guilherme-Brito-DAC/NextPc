@@ -8,36 +8,30 @@ body{
 }
 
 header{
-    display:flex;
     width: 100%;
     align-items: center;
-    justify-content: space-around;
-    border: solid 2px;
-    text-shadow: white 0px 0px 2px;
-    font-size: 20px;
-    background-size: 150px;
 }
 
 header div{
     display:flex;
     justify-content: space-around;
-    gap: 20px;
 }
 
 a{
-    cursor: pointer;
     font-size: large;
     text-decoration: none;
-    color:var(--corFonte);
     opacity: 0.5;    
     transition: 0.25s;
+    font-size: 20px;    
+    float: right;
 }
 
 a:hover{
-    opacity: 1;    
+    opacity: 1;
+    font-size: 20px;    
 }
 
 .logo{
-    width: 8%;
+    width: 25%;
     height: auto;
 }

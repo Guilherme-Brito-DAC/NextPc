@@ -15,12 +15,14 @@ function Pecas() {
               placeholder="Procurar Peças..."
               startAdornment={
                 <InputAdornment position="start">
-                  <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/32/000000/external-search-interface-kiranshastry-lineal-kiranshastry.png" />
+                  <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/32/ffffff/external-search-interface-kiranshastry-lineal-kiranshastry.png" />
                 </InputAdornment>
               }
             />
           </FormControl>
         </div>
+        <br />
+        <br />
         <div className="researchResult">
           <div className="imgTitulo">
             <div className="img">
