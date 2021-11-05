@@ -22,7 +22,12 @@ namespace Nextgear.Repository
         {
             return contexto.Usuarios.Where(u => u.id == id).FirstOrDefault();
         }
-        
+
+        public Usuario RecuperarPorUsuario(UsuarioLogin usuario)
+        {
+            return contexto.Usuarios.Where(u => u.usuario == usuario.email && u.senha == usuario.senha).FirstOrDefault();
+        }
+
         public void CadastrarUsuario(Usuario usuario)
         {
             contexto.Usuarios.Add(usuario);
@@ -39,6 +44,18 @@ namespace Nextgear.Repository
         {
             contexto.Usuarios.Remove(usuario);
             contexto.SaveChanges();
+        }
+
+        public bool Login(UsuarioLogin usuario)
+        {
+            var contagemDeUsuarios = contexto.Usuarios.Where(u => u.usuario == usuario.email && u.senha == usuario.senha).Count();
+            
+            if (contagemDeUsuarios > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

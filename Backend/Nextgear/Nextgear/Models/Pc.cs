@@ -1,6 +1,6 @@
 ﻿namespace Nextgear.Models
 {
-    public abstract class Pc
+    public class Pc
     { 
         public int id { get; set; }
         public string placa_mae { get; set; }
@@ -11,7 +11,7 @@
         public string ram { get; set; }
         public string cooler { get; set; }
         public string monitor { get; set; }
-        public string usuario_id { get; set; }
         public string fonte { get; set; }
+        public int usuario_id { get; set; }
     }
 }

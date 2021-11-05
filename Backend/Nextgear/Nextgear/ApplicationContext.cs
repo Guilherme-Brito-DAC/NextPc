@@ -11,5 +11,22 @@ namespace Nextgear
         {
 
         }
+
+        public ApplicationContext()
+        {
+
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Pc>().HasKey(t => t.id);
+
+            modelBuilder.Entity<Usuario>().HasKey(t => t.id);
+        }
     }
 }

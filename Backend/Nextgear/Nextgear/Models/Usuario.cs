@@ -8,7 +8,7 @@ namespace Nextgear.Models
         public int id { get; set; }
 
         [Required]
-        [MinLength(1,ErrorMessage = "O seu nome tem que ter pelo menos 1 dígito")]
+        [MinLength(1, ErrorMessage = "O seu nome tem que ter pelo menos 1 dígito")]
         [MaxLength(50, ErrorMessage = "O seu nome tem que ter menos que 50 dígitos")]
         [DataType(DataType.Text)]
         [Display(Name = "Nome")]
@@ -30,7 +30,7 @@ namespace Nextgear.Models
 
         [Required]
         [MinLength(5, ErrorMessage = "A sua senha tem que ter pelo menos 5 dígitos")]
-        [MaxLength(250, ErrorMessage = "O seu nome tem que ter menos que 250 dígitos")]
+        [MaxLength(250, ErrorMessage = "A sua senha tem que ter menos que 250 dígitos")]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         public string senha { get; set; }
@@ -43,5 +43,20 @@ namespace Nextgear.Models
         [DataType(DataType.Date)]
         [Display(Name = "Data_de_cadastro")]
         public DateTime data_de_cadastro { get; set; }
+    }
+
+    public class UsuarioLogin
+    {
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email")]
+        public string email { get; set; }
+
+        [Required]
+        [MinLength(5, ErrorMessage = "A sua senha tem que ter pelo menos 5 dígitos")]
+        [MaxLength(250, ErrorMessage = "A sua senha tem que ter menos que 250 dígitos")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Senha")]
+        public string senha { get; set; }
     }
 }
