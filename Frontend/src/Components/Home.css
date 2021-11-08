@@ -6,5 +6,8 @@
 .titulo{
     color: white;
     text-transform: uppercase;
-    font-style: italic;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 20px;
+    font-weight: bolder;
 }

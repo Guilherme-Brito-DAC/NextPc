@@ -1,21 +1,17 @@
-.pecas{
+body{
     text-align: center;
-    border-radius: 20px;
-    width: 100%;
 }
 
-.barraPesquisa{
-    float: right;
-}
-
-.imgTitulo{
-    display: flex;
-}
-
-.researchResult{
+.options{
     border-radius: 10px;
     margin-bottom: 1em;
     padding: 1em;
     border: 3px solid whitesmoke;
     background-color: #202124;
+    justify-content: space-between;
+}
+
+.optionName{
+    margin-left: 2rem;
+    font-weight: bold;
 }

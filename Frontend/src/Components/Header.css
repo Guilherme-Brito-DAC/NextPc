@@ -1,37 +1,24 @@
 body{
-    background-image: url('../imgs/backImg.jpg');
-    width: 100%;
-    height: auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow-x: hidden;
+    background-image: url('../imgs/backImg.gif');
 }
 
 header{
-    width: 100%;
-    align-items: center;
+    background-color: black;
 }
 
 header div{
+    background-color: black;
     display:flex;
     justify-content: space-around;
 }
 
-a{
-    font-size: large;
-    text-decoration: none;
-    opacity: 0.5;    
-    transition: 0.25s;
-    font-size: 20px;    
-    float: right;
-}
-
 a:hover{
     opacity: 1;
-    font-size: 20px;    
+    font-size: 17px;    
 }
 
 .logo{
-    width: 25%;
+    width: 10rem;
     height: auto;
+    float: left;
 }

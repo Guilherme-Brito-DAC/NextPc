@@ -1,10 +1,18 @@
-.back{
-    padding: 5em;
-    margin: 8rem;
-    background-color: rgb(48, 48, 48);
+.backgroundFinal{
+    width: 100%;
+    padding: 10rem;
     text-align: center;
     display: flex;
-    justify-content: space-around;
+    border-radius: 20px;
+    border: 3px solid whitesmoke;
+    background-color: #202124;
+}
+
+.backgroundEscolha{
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
     border-radius: 20px;
 }
 

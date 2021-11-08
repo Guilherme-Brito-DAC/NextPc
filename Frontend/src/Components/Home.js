@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 import './Home.css'
 
 function Home() {
@@ -8,9 +8,9 @@ function Home() {
       <div className="home">
         <h1 className="titulo">O dia de montar o PC do seus sonhos chegou !</h1>
         <br />
-        <Button variant="contained" color="primary">
-          Montar meu PC
-        </Button>
+        <Link to="/pc" type="button" className="btn btn-dark">
+          COMEÇAR A MONTAR
+        </Link>
       </div>
     </>
   )
