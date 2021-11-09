@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './PCs.css'
-import './bootstrap.min.css'
+import '../Components/bootstrap.min.css'
 
 function PCs() {
   return (
