@@ -1,0 +1,10 @@
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--Navbar);
+    color: var(--CorFonte);
+    text-align: center;
+    transition: 0.5s;
+}

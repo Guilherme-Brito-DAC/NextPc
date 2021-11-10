@@ -1,46 +1,72 @@
-import React, { useState, Component } from 'react'
-import { Collapse, Container, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
+import React, { useState } from 'react'
+import { NavbarBrand, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import Logomarca from '../imgs/Logo.png'
 import './Header.css'
 
-export default function Header() {
+export default function Header(Prop) {
 
-  const [nightMode, setNightMode] = useState(false)
+  const [Pesquisa, SetPesquisa] = useState("");
 
-  const setModoNoturno = (event) => setNightMode(event.target.checked)
+  console.log(Prop)
+
+  function VerificaUsuario() {
+    if (Prop.Usuario != null) {
+      return <div>
+        <NavLink tag={Link} className="cta" title="Conta" to="/conta" >Conta</NavLink>
+      </div>
+    }
+    else {
+      return <div className="loginECadastro">
+        <NavLink tag={Link} className="cta" title="Cadastro" to="/conta" >Cadastro</NavLink>
+        <NavLink tag={Link} title="Login" to="/conta" >Login</NavLink>
+      </div>
+    }
+  }
+
+  function VerificaModoNoturno(){
+    if(!Prop.NightMode){
+      return <img src="https://img.icons8.com/external-bearicons-glyph-bearicons/30/585858/external-Night-essential-collection-bearicons-glyph-bearicons.png" alt="" id="nightModeOn" className="nightModeOn"/>
+    }
+    else{
+      return <img src="https://img.icons8.com/fluency-systems-filled/30/9e9ea7/sun.png" alt="" id="nightModeOff" className="nightModeOff"/>
+    }
+  }
+
+  function HandleChange(event){
+    SetPesquisa(event.target.value)
+  }
+
+  function HandleSubmit(event) {
+    event.preventDefault()
+    console.log(Pesquisa)
+  }
 
   return (
-    <div>
-      <header>
-            <NavbarBrand tag={Link} to="/">
-              <img src={Logomarca} className="logo" />
-            </NavbarBrand>
-            <nav>
-                <ul className="nav__links">
-                    <li>
-                    <NavLink tag={Link} title="Monte Seu PC" to="/pc"><img src="https://img.icons8.com/external-prettycons-lineal-prettycons/25/ffffff/external-pc-tower-devices-prettycons-lineal-prettycons.png"/>Monte seu PC</NavLink>
-                    </li>
-                    <li>
-                    <NavLink tag={Link} title="Peças" to="/pecas"><img src="https://img.icons8.com/ios-filled/25/ffffff/video-card.png"/> Pesquisar por Peças</NavLink>
-                    </li>
-                    <li>
-                    <NavLink tag={Link} title="Comunidade" to="/comunidade"><img src="https://img.icons8.com/ios-filled/25/ffffff/comment-discussion.png"/> Comunidade</NavLink>
-                    </li>
-                </ul>
-            </nav>
-            <NavLink tag={Link} title="Conta" className="cta" to="/conta" style={{color:'white'}}><img src="https://img.icons8.com/ios-glyphs/25/ffffff/user--v1.png"/> Conta</NavLink>
-            <p className="menu cta">Menu</p>
-        </header>
-        <div className="overlay">
-            <a className="close">&times;</a>
-            <div className="overlay__content">
-              <NavLink tag={Link} title="Monte Seu PC" to="/pc"><img src="https://img.icons8.com/external-prettycons-lineal-prettycons/25/ffffff/external-pc-tower-devices-prettycons-lineal-prettycons.png"/>Monte seu PC</NavLink>
-              <NavLink tag={Link} title="Peças" to="/pecas"><img src="https://img.icons8.com/ios-filled/25/ffffff/video-card.png"/> Pesquisar por Peças</NavLink>
-              <NavLink tag={Link} title="Comunidade" to="/comunidade"><img src="https://img.icons8.com/ios-filled/25/ffffff/comment-discussion.png"/> Comunidade</NavLink>
-              <NavLink tag={Link} title="Conta" to="/conta" ><img src="https://img.icons8.com/ios-glyphs/25/ffffff/user--v1.png"/> Conta</NavLink>
-            </div>
+    <>
+      <nav>
+        <div>
+          <NavbarBrand tag={Link} to="/">
+            <img src={Logomarca} className="logo" alt="" />
+          </NavbarBrand>
+          <NavLink tag={Link} title="Monte Seu PC" to="/pc">Monte seu PC</NavLink>
+          <NavLink tag={Link} title="Comunidade" to="/comunidade">Comunidade</NavLink>
         </div>
-    </div>
+
+        <div>
+          <form action="" method="get" onSubmit={HandleSubmit}>
+            <div className="pesquisa">
+              <img src="https://img.icons8.com/ios-glyphs/20/9e9ea7/search--v1.png" alt=""/>
+              <input type="text" value={Pesquisa} onChange={HandleChange} placeholder="Pesquisa uma Peça" />
+            </div>
+          </form>
+          <button type="button" className="ModoNoturno" onClick={() => Prop.SetNightMode(!Prop.NightMode)}>
+              {VerificaModoNoturno()}
+          </button>
+          {VerificaUsuario()}
+        </div>
+
+      </nav>
+    </>
   )
 }

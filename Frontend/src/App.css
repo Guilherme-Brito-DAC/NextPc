@@ -1,7 +1,15 @@
-body{
-    background-image: url("./imgs/backImg.gif");
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-main{
-    margin-top: 1rem;
+:root {
+    --CorFundo: #f1f1f1;
+    --CorFonte: #585858;
+    --Navbar: white;
+    --FonteInput: #9e9ea7;
+  }
+
+body{
+    background-color: var(--CorFundo);
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    transition: 0.5s;
 }
