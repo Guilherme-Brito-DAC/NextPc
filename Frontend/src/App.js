@@ -15,8 +15,8 @@ function App() {
 
   const [Usuario, SetUsuario] = useState(null);
 
-  //Para Mudar o nightmode é só trocar de false para true
   const [NightMode,SetNightMode] = useState(false);
+
   const root = document.querySelector(':root');
 
   if(NightMode)
@@ -43,7 +43,7 @@ function App() {
             <Route path="/pc" component={PCs} />
             <Route path="/pecas" component={Pecas} />
             <Route path="/comunidade" component={Comunidade} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" SetUsuario={SetUsuario} component={Login} />
             <Route path="/cadastro" component={Cadastro} />
             <Route path="/conta" component={Conta} />
           </main>

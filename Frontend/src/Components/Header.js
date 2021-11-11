@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React , {useState}from 'react'
 import { NavbarBrand, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import Logomarca from '../imgs/Logo.png'
@@ -8,8 +8,6 @@ export default function Header(Prop) {
 
   const [Pesquisa, SetPesquisa] = useState("");
 
-  console.log(Prop)
-
   function VerificaUsuario() {
     if (Prop.Usuario != null) {
       return <div>
@@ -18,8 +16,8 @@ export default function Header(Prop) {
     }
     else {
       return <div className="loginECadastro">
-        <NavLink tag={Link} className="cta" title="Cadastro" to="/conta" >Cadastro</NavLink>
-        <NavLink tag={Link} title="Login" to="/conta" >Login</NavLink>
+        <NavLink tag={Link} className="cta" title="Cadastro" to="/cadastro" >Cadastro</NavLink>
+        <NavLink tag={Link} title="Login" to="/login" >Login</NavLink>
       </div>
     }
   }
@@ -39,7 +37,7 @@ export default function Header(Prop) {
 
   function HandleSubmit(event) {
     event.preventDefault()
-    console.log(Pesquisa)
+    window.location.href = "/pecas?q=" + Pesquisa
   }
 
   return (
@@ -49,10 +47,10 @@ export default function Header(Prop) {
           <NavbarBrand tag={Link} to="/">
             <img src={Logomarca} className="logo" alt="" />
           </NavbarBrand>
-          <NavLink tag={Link} title="Monte Seu PC" to="/pc">Monte seu PC</NavLink>
-          <NavLink tag={Link} title="Comunidade" to="/comunidade">Comunidade</NavLink>
+          <NavLink tag={Link} title="Monte Seu PC" to="/pc"><img src="https://img.icons8.com/ios-filled/20/9e9ea7/wrench.png"/>Monte seu PC</NavLink>
+          <NavLink tag={Link} title="Comunidade" to="/comunidade"><img src="https://img.icons8.com/ios-glyphs/20/9e9ea7/monitor.png"/>PCs Prontos</NavLink>
+          <NavLink tag={Link} title="Peças" to="/pecas"><img src="https://img.icons8.com/ios-glyphs/20/9e9ea7/search--v1.png"/> Procurar Peças</NavLink>
         </div>
-
         <div>
           <form action="" method="get" onSubmit={HandleSubmit}>
             <div className="pesquisa">

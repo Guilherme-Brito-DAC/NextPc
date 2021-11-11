@@ -44,6 +44,9 @@ a{
     text-decoration: none;
     color:var(--CorFonte);
     transition: 0.25s;
+    display:flex;
+    align-items: center;
+    gap: 5px;
 }
 
 a:hover{
