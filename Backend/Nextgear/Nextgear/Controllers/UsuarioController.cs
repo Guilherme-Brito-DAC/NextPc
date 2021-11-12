@@ -1,139 +1,126 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Nextgear.Models;
-using Nextgear.Repository;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using nextgear.Models;
+using nextgear.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Nextgear.Controllers
+namespace nextgear.Controllers
 {
-    [ApiController]
-    [Route("api/usuarios")]
-    [Authorize]
+    [Route("api/usuario")]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepository IUsuarioRepository;
 
-        public UsuarioController(IUsuarioRepository _IUsuarioRepository)
+        public UsuarioController(IUsuarioRepository iUsuarioRepository)
         {
-            IUsuarioRepository = _IUsuarioRepository;
-        }
-
-        [HttpGet]
-        public IActionResult RecuperarTudo()
-        {
-            return Ok(IUsuarioRepository.RecuperarTodosUsuario());
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult RecuperarId(int id)
-        {
-            try
-            {
-                var usuario = IUsuarioRepository.RecuperarPorUsuario(id);
-
-                if (usuario == null) return NotFound();
-
-                return Ok(usuario);
-            }
-            catch (Exception e)
-            {
-                return BadRequest("Aconteceu um erro -> " + e.Message);
-            }
+            IUsuarioRepository = iUsuarioRepository;
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult Login([FromForm] UsuarioLogin usuario)
+        [Route("cadastrar")]
+        public ActionResult Cadastrar([FromBody] Usuario Usuario)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (IUsuarioRepository.Login(usuario))
-                    {
-                        return Ok("Usuário logado com sucesso!");
-                    }
-                    else
-                    {
-                        return BadRequest("Usuário ou senha incorretos!");
-                    }
+                    IUsuarioRepository.Cadastrar(Usuario);
+
+                    return Ok("Usuario editado com sucesso!");
                 }
 
                 return BadRequest("Dados Inválidos");
             }
             catch (Exception e)
             {
-                return BadRequest("Aconteceu um erro -> " + e.Message);
+                return BadRequest("Erro -> " + e.Message);
             }
-        }
-
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult Logout()
-        {
-            //deslogado
-            return Ok("Deslogado!");
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult Cadastrar([FromForm] Usuario usuario)
+        [Route("login")]
+        public ActionResult Login([FromBody] Usuario Usuario)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    IUsuarioRepository.CadastrarUsuario(usuario);
-                    return Ok("Usuário cadastrado com sucesso!");
+                    if (IUsuarioRepository.Login(Usuario.usuario, Usuario.senha))
+                    {
+                        return Ok("Logado!");
+                    }
+                    else
+                    {
+                        return BadRequest("Usuario ou senha incorretos");
+                    }
                 }
 
-                return BadRequest("Dados inválidos");
+                string error = string.Join("; ", ModelState.Values
+                                       .SelectMany(x => x.Errors)
+                                       .Select(x => x.ErrorMessage));
+
+                return BadRequest("Dados Inválidos - > " + error);
             }
             catch (Exception e)
             {
-                return BadRequest("Aconteceu um erro -> " + e.Message);
+                return BadRequest("Erro -> " + e.Message);
             }
         }
 
         [HttpPut]
-        public IActionResult Editar([FromForm] Usuario usuario)
+        [Authorize]
+        public ActionResult Editar([FromBody]Usuario Usuario)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    IUsuarioRepository.EditarUsuario(usuario);
-                    return Ok("Usuário editado com sucesso!");
+                    IUsuarioRepository.Editar(Usuario);
+
+                    return Ok("Usuario editado com sucesso!");
                 }
 
-                return BadRequest("Dados inválidos");
+                string error = string.Join("; ", ModelState.Values
+                                       .SelectMany(x => x.Errors)
+                                       .Select(x => x.ErrorMessage));
+
+                return BadRequest("Dados Inválidos - > " + error);
             }
             catch (Exception e)
             {
-                return BadRequest("Aconteceu um erro -> " + e.Message);
+                return BadRequest("Erro -> " + e.Message);
             }
         }
 
         [HttpDelete]
-        public IActionResult Deletar([FromForm] Usuario usuario)
+        [Authorize]
+        public ActionResult Deletar([FromBody] Usuario Usuario)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    IUsuarioRepository.DeletarUsuario(usuario);
-                    return Ok("Usuário deletado com sucesso!");
+                    IUsuarioRepository.Deletar(Usuario);
+
+                    return Ok("Usuario deletado com sucesso!");
                 }
 
-                return BadRequest("Dados inválidos");
+                string error = string.Join("; ", ModelState.Values
+                                       .SelectMany(x => x.Errors)
+                                       .Select(x => x.ErrorMessage));
+
+                return BadRequest("Dados Inválidos - > " + error);
             }
             catch (Exception e)
             {
-                return BadRequest("Aconteceu um erro -> " + e.Message);
+                return BadRequest("Erro -> " + e.Message);
             }
         }
     }

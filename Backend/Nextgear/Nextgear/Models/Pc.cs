@@ -1,17 +1,18 @@
-﻿namespace Nextgear.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace nextgear.Models
 {
-    public class Pc
-    { 
-        public int id { get; set; }
-        public string placa_mae { get; set; }
-        public string placa_de_video { get; set; }
-        public string processador { get; set; }
-        public string hd { get; set; }
-        public string ssd { get; set; }
-        public string ram { get; set; }
-        public string cooler { get; set; }
-        public string monitor { get; set; }
-        public string fonte { get; set; }
-        public int usuario_id { get; set; }
+    public class Pc : BaseModel
+    {
+        public Armazenamento armazenamento_id { get; set; }
+        public Cpu cpu { get; set; }
+        public Gpu gpu { get; set; }
+        public Fonte fonte { get; set; }
+        public Placa_mae placa_mae { get; set; }
+        public Ram ram { get; set; }
+        public Usuario usuario { get; set; }
     }
 }

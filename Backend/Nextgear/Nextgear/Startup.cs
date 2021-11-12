@@ -1,12 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Nextgear.Repository;
+using Microsoft.OpenApi.Models;
+using nextgear.Repositories;
+using System;
 
-namespace Nextgear
+namespace nextgear
 {
     public class Startup
     {
@@ -19,12 +21,19 @@ namespace Nextgear
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationContext>(options =>{
-                options.UseMySQL(Configuration.GetConnectionString("Default"));
-            });
-
-            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "nextgear", Version = "v1" });
+            });
+            services.AddTransient<IPecasRepository, PecasRepository>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+
+            string connectionString = Configuration.GetConnectionString("Default");
+
+            services.AddDbContext<ApplicationContext>(options =>
+                options.UseMySql(connectionString, new MySqlServerVersion(new Version()))
+            );
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -32,9 +41,10 @@ namespace Nextgear
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "nextgear v1"));
             }
 
-            app.UseCors();
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();

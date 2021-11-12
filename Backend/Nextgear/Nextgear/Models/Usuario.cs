@@ -1,62 +1,39 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Nextgear.Models
+namespace nextgear.Models
 {
     public class Usuario
     {
+        [Key]
         public int id { get; set; }
-
         [Required]
-        [MinLength(1, ErrorMessage = "O seu nome tem que ter pelo menos 1 dígito")]
-        [MaxLength(50, ErrorMessage = "O seu nome tem que ter menos que 50 dígitos")]
         [DataType(DataType.Text)]
         [Display(Name = "Nome")]
+        [MaxLength(50,ErrorMessage = "O Nome deve ter menos que 50 caracteres"), MinLength(2, ErrorMessage = "O Nome deve ter mais que 2 caracteres")]
         public string nome { get; set; }
-
         [Required]
-        [MinLength(1, ErrorMessage = "O seu sobrenome tem que ter pelo menos 1 dígito")]
-        [MaxLength(50, ErrorMessage = "O seu sobrenome tem que ter menos que 50 dígitos")]
         [DataType(DataType.Text)]
         [Display(Name = "Sobrenome")]
+        [MaxLength(50, ErrorMessage = "O sobrenome deve ter menos que 50 caracteres"), MinLength(2, ErrorMessage = "O sobrenome deve ter mais que 2 caracteres")]
         public string sobrenome { get; set; }
-
         [Required]
-        [MinLength(5, ErrorMessage = "O seu login de usuario tem que ter pelo menos 5 dígitos")]
-        [MaxLength(50, ErrorMessage = "O seu login de usuario tem que ter menos que 50 dígitos")]
         [DataType(DataType.Text)]
         [Display(Name = "Usuario")]
+        [MaxLength(50, ErrorMessage = "O Usuario deve ter menos que 50 caracteres"), MinLength(2, ErrorMessage = "O Usuario deve ter mais que 2 caracteres")]
         public string usuario { get; set; }
-
-        [Required]
-        [MinLength(5, ErrorMessage = "A sua senha tem que ter pelo menos 5 dígitos")]
-        [MaxLength(250, ErrorMessage = "A sua senha tem que ter menos que 250 dígitos")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Senha")]
-        public string senha { get; set; }
-
+        [DataType(DataType.Text)]
+        [Display(Name = "Imagem")]
+        public string imagem { get; set; }
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
         public string email { get; set; }
-
-        [DataType(DataType.Date)]
-        [Display(Name = "Data_de_cadastro")]
-        public DateTime data_de_cadastro { get; set; }
-    }
-
-    public class UsuarioLogin
-    {
         [Required]
-        [DataType(DataType.EmailAddress)]
-        [Display(Name = "Email")]
-        public string email { get; set; }
-
-        [Required]
-        [MinLength(5, ErrorMessage = "A sua senha tem que ter pelo menos 5 dígitos")]
-        [MaxLength(250, ErrorMessage = "A sua senha tem que ter menos que 250 dígitos")]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
+        [MaxLength(250, ErrorMessage = "A senha deve ter menos que 250 caracteres"), MinLength(5, ErrorMessage = "A senha deve ter mais que 5 caracteres")]
         public string senha { get; set; }
+        [Display(Name = "Modo Noturno")]
+        public bool modoNoturno { get; set; }
     }
 }

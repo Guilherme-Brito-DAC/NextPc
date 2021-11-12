@@ -1,18 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Nextgear.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
+using nextgear.Models;
 
-namespace Nextgear
+namespace nextgear
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<Usuario> Usuarios { get; set; }
-
-        public ApplicationContext(DbContextOptions<ApplicationContext> options): base(options) 
-        {
-
-        }
-
-        public ApplicationContext()
+        public ApplicationContext([NotNullAttribute] DbContextOptions options) : base(options)
         {
 
         }
@@ -24,8 +18,12 @@ namespace Nextgear
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Pc>().HasKey(t => t.id);
-
+            modelBuilder.Entity<Armazenamento>().HasKey(t => t.id);
+            modelBuilder.Entity<Cpu>().HasKey(t => t.id);
+            modelBuilder.Entity<Gpu>().HasKey(t => t.id);
+            modelBuilder.Entity<Fonte>().HasKey(t => t.id);
+            modelBuilder.Entity<Placa_mae>().HasKey(t => t.id);
+            modelBuilder.Entity<Ram>().HasKey(t => t.id);
             modelBuilder.Entity<Usuario>().HasKey(t => t.id);
         }
     }

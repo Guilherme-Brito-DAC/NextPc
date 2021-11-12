@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\Nextgear\\Nextgear\\Nextgear.csproj": {}
+    "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\nextgear.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\Nextgear\\Nextgear\\Nextgear.csproj": {
+    "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\nextgear.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\Nextgear\\Nextgear\\Nextgear.csproj",
-        "projectName": "Nextgear",
-        "projectPath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\Nextgear\\Nextgear\\Nextgear.csproj",
+        "projectUniqueName": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\nextgear.csproj",
+        "projectName": "nextgear",
+        "projectPath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\nextgear.csproj",
         "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\Nextgear\\Nextgear\\obj\\",
+        "outputPath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\guilh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -37,20 +37,20 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[5.0.12, )"
             },
-            "MySql.Data": {
+            "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
-              "version": "[8.0.26, )"
+              "version": "[5.0.3, )"
             },
-            "MySql.Data.EntityFrameworkCore": {
+            "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[8.0.22, )"
+              "version": "[5.6.3, )"
             }
           },
           "imports": [
