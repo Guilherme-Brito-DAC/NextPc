@@ -63,6 +63,10 @@
     color: var(--CorFonte)
 }
 
+.ordenarPor p{
+    white-space: nowrap;
+}
+
 .filtros{
     display:flex;
     align-items: center;

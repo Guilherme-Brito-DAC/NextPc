@@ -14,9 +14,9 @@ import './App.css'
 function App() {
 
   const [Usuario, SetUsuario] = useState(null);
-  const [Token,SetToken] = useState("");
+  const [Token, SetToken] = useState("");
   const [NightMode, SetNightMode] = useState(false);
-  const [Tamanho,SetTamanho] = useState("17 rem");
+  const [Tamanho, SetTamanho] = useState("17 rem");
   const [Pesquisa, SetPesquisa] = useState("");
   const root = document.querySelector(':root');
 
@@ -36,8 +36,8 @@ function App() {
   return (
     <>
       <Router>
-        <Header Usuario={Usuario} NightMode={NightMode} SetNightMode={SetNightMode}/>
-        <div className="fakeNav"></div>
+        <Header Usuario={Usuario} NightMode={NightMode} SetNightMode={SetNightMode} />
+        <br/>
         <div className="container">
           <Route exact path="/">
             <Home />
@@ -46,19 +46,19 @@ function App() {
             <PCs />
           </Route>
           <Route path="/pecas">
-            <Pecas Pesquisa={Pesquisa} SetPesquisa={SetPesquisa} Tamanho={Tamanho} SetTamanho={SetTamanho}/>
+            <Pecas Pesquisa={Pesquisa} SetPesquisa={SetPesquisa} Tamanho={Tamanho} SetTamanho={SetTamanho} />
           </Route>
           <Route path="/comunidade">
             <Comunidade />
           </Route>
           <Route path="/login">
-            <Login SetUsuario={SetUsuario} SetToken={SetToken} />
-          </Route>
-          <Route path="/cadastro">
-            <Cadastro />
-          </Route>
+          <Login SetUsuario={SetUsuario} SetToken={SetToken} />
+        </Route>
+        <Route path="/cadastro">
+          <Cadastro />
+        </Route>
           <Route path="/conta">
-            <Conta Token={Token}/>
+            <Conta Token={Token} />
           </Route>
         </div>
         <Footer />

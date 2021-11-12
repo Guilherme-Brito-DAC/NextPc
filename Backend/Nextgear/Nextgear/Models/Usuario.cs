@@ -21,9 +21,6 @@ namespace nextgear.Models
         [Display(Name = "Usuario")]
         [MaxLength(50, ErrorMessage = "O Usuario deve ter menos que 50 caracteres"), MinLength(2, ErrorMessage = "O Usuario deve ter mais que 2 caracteres")]
         public string usuario { get; set; }
-        [DataType(DataType.Text)]
-        [Display(Name = "Imagem")]
-        public string imagem { get; set; }
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
