@@ -88,11 +88,11 @@ namespace nextgear.Repositories
 
         public IList<Ram> PesquisarRam(string pesquisa)
         {
-            return Ram.Where(p => p.nome.Contains(pesquisa)).ToList();
+            return Ram.Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
         }
         public IList<Fonte> PesquisarFonte(string pesquisa)
         {
-            return Fonte.Where(p => p.nome.Contains(pesquisa)).ToList();
+            return Fonte.Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
         }
         public IList<Gpu> PesquisarGpu(string pesquisa)
         {
@@ -100,15 +100,15 @@ namespace nextgear.Repositories
         }
         public IList<Cpu> PesquisarCpu(string pesquisa)
         {
-            return Cpu.Where(p => p.nome.Contains(pesquisa)).ToList();
+            return Cpu.Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
         }
         public IList<Armazenamento> PesquisarArmazenamento(string pesquisa)
         {
-            return Armazenamento.Where(p => p.nome.Contains(pesquisa)).ToList();
+            return Armazenamento.Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
         }
         public IList<Placa_mae> PesquisarPlaca_mae(string pesquisa)
         {
-            return Placa_mae.Where(p => p.nome.Contains(pesquisa)).ToList();
+            return Placa_mae.Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
         }
     }
 }

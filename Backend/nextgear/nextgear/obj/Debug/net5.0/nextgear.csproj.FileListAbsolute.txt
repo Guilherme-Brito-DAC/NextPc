@@ -33,3 +33,10 @@ C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\MySqlConnector.dll
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

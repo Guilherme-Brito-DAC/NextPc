@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using nextgear.Models;
 using nextgear.Repositories;
+using nextgear.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace nextgear.Controllers
 {
+    [ApiController]
     [Route("api/usuario")]
     public class UsuarioController : Controller
     {
@@ -54,7 +56,15 @@ namespace nextgear.Controllers
                 {
                     if (IUsuarioRepository.Login(Usuario.usuario, Usuario.senha))
                     {
-                        return Ok("Logado!");
+                        var token = TokenService.GerarToken(Usuario);
+
+                        var retorno = new
+                        {
+                            usuario = Usuario,
+                            token = token
+                        };
+
+                        return Ok(retorno);
                     }
                     else
                     {

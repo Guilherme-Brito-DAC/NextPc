@@ -18,7 +18,7 @@ namespace nextgear.Repositories
 
         public bool Login(string p_usuario, string senha)
         {
-            var usuario = _Usuario.Where(u => u.usuario == p_usuario && u.senha == senha).ToList().Count();
+            var usuario = _Usuario.Where(u => u.usuario.ToLower() == p_usuario.ToLower() && u.senha.ToLower() == senha.ToLower()).ToList().Count();
 
             if (usuario > 0)
             {
@@ -50,7 +50,7 @@ namespace nextgear.Repositories
 
         public Usuario ListarUmUsuario(string p_usuario, string senha)
         {
-            return _Usuario.Where(u => u.usuario == p_usuario && u.senha == senha).ToList().SingleOrDefault();
+            return _Usuario.Where(u => u.usuario.ToLower() == p_usuario.ToLower() && u.senha.ToLower() == senha.ToLower()).ToList().SingleOrDefault();
         }
     }
 }

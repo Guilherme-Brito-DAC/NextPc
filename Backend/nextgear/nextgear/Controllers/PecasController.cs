@@ -5,6 +5,7 @@ using System;
 
 namespace nextgear.Controllers
 {
+    [ApiController]
     [AllowAnonymous]
     [Route("api/pecas")]
     public class PecasController : Controller
