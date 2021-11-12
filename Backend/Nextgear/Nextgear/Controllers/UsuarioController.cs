@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -8,6 +9,7 @@ using nextgear.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace nextgear.Controllers
@@ -48,7 +50,7 @@ namespace nextgear.Controllers
         [HttpPost]
         [AllowAnonymous]
         [Route("login")]
-        public ActionResult Login([FromBody] Usuario Usuario)
+        public ActionResult Login([FromBody] UsuarioLogin Usuario)
         {
             try
             {
@@ -60,7 +62,7 @@ namespace nextgear.Controllers
 
                         var retorno = new
                         {
-                            usuario = Usuario,
+                            usuario = IUsuarioRepository.ListarUmUsuario(Usuario.usuario, Usuario.senha),
                             token = token
                         };
 

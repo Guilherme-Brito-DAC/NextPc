@@ -14,6 +14,7 @@ import './App.css'
 function App() {
 
   const [Usuario, SetUsuario] = useState(null);
+  const [Token,SetToken] = useState("");
   const [NightMode, SetNightMode] = useState(false);
   const [Tamanho,SetTamanho] = useState("17 rem");
   const [Pesquisa, SetPesquisa] = useState("");
@@ -41,23 +42,23 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/pc" component={PCs} >
+          <Route path="/pc">
             <PCs />
           </Route>
           <Route path="/pecas">
             <Pecas Pesquisa={Pesquisa} SetPesquisa={SetPesquisa} Tamanho={Tamanho} SetTamanho={SetTamanho}/>
           </Route>
-          <Route path="/comunidade" component={Comunidade} >
+          <Route path="/comunidade">
             <Comunidade />
           </Route>
-          <Route path="/login" component={Login} >
-            <Login />
+          <Route path="/login">
+            <Login SetUsuario={SetUsuario} SetToken={SetToken} />
           </Route>
-          <Route path="/cadastro" component={Cadastro} >
+          <Route path="/cadastro">
             <Cadastro />
           </Route>
-          <Route path="/conta" component={Conta} >
-            <Conta />
+          <Route path="/conta">
+            <Conta Token={Token}/>
           </Route>
         </div>
         <Footer />

@@ -36,4 +36,19 @@ namespace nextgear.Models
         [Display(Name = "Modo Noturno")]
         public bool modoNoturno { get; set; }
     }
+
+    public class UsuarioLogin
+    {
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Usuario")]
+        [MaxLength(50, ErrorMessage = "O Usuario deve ter menos que 50 caracteres"), MinLength(2, ErrorMessage = "O Usuario deve ter mais que 2 caracteres")]
+        public string usuario { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Senha")]
+        [MaxLength(250, ErrorMessage = "A senha deve ter menos que 250 caracteres"), MinLength(5, ErrorMessage = "A senha deve ter mais que 5 caracteres")]
+        public string senha { get; set; }
+    }
 }

@@ -12,7 +12,7 @@ namespace nextgear.Services
 {
     public static class TokenService
     {
-        public static string GerarToken(Usuario usuario)
+        public static string GerarToken(UsuarioLogin usuario)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Settings.Secret);

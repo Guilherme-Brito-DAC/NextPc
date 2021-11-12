@@ -29,6 +29,7 @@ namespace nextgear
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "nextgear", Version = "v1" });
             });
+
             services.AddTransient<IPecasRepository, PecasRepository>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
@@ -56,6 +57,14 @@ namespace nextgear
                      ValidateAudience = false
                  };
              });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder => builder
+                          .AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -67,6 +76,7 @@ namespace nextgear
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "nextgear v1"));
             }
 
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthentication();

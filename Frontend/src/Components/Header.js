@@ -6,7 +6,7 @@ import './Header.css'
 
 export default function Header(Prop) {
   function VerificaUsuario() {
-    if (Prop.Usuario != null) {
+    if (Prop.Usuario !== null) {
       return <div>
         <NavLink tag={Link} className="cta" title="Conta" to="/conta" >Conta</NavLink>
       </div>
@@ -35,9 +35,9 @@ export default function Header(Prop) {
           <NavbarBrand tag={Link} to="/">
             <img src={Logomarca} className="logo" alt="" />
           </NavbarBrand>
-          <NavLink tag={Link} className="NavLink" title="Monte Seu PC" to="/pc"><img src="https://img.icons8.com/ios-filled/20/9e9ea7/wrench.png"/>Monte seu PC</NavLink>
-          <NavLink tag={Link} className="NavLink"  title="Comunidade" to="/comunidade"><img src="https://img.icons8.com/ios-glyphs/20/9e9ea7/monitor.png"/>PCs Prontos</NavLink>
-          <NavLink tag={Link} className="NavLink"  title="Peças" to="/pecas"><img src="https://img.icons8.com/ios-glyphs/20/9e9ea7/search--v1.png"/> Procurar Peças</NavLink>
+          <NavLink tag={Link} className="NavLink" title="Monte Seu PC" to="/pc"><img src="https://img.icons8.com/ios-filled/20/9e9ea7/wrench.png" alt=""/>Monte seu PC</NavLink>
+          <NavLink tag={Link} className="NavLink"  title="Comunidade" to="/comunidade"><img src="https://img.icons8.com/ios-glyphs/20/9e9ea7/monitor.png" alt=""/>PCs Prontos</NavLink>
+          <NavLink tag={Link} className="NavLink"  title="Peças" to="/pecas"><img src="https://img.icons8.com/ios-glyphs/20/9e9ea7/search--v1.png" alt=""/> Procurar Peças</NavLink>
         </div>
         <div>
           <button type="button" className="ModoNoturno" onClick={() => Prop.SetNightMode(!Prop.NightMode)}  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Modo Noturno">

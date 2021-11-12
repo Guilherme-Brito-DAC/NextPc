@@ -142,7 +142,7 @@ function Pecas(prop) {
               <div className="card-body">
                 <h5 className="card-title">{p.nome}</h5>
                 <p className="card-text">{p.velocidade}</p><br />
-                <p className="card-text">{p.preco == 0 ? "Preço não encontrado" : "R$" + p.preco}</p>
+                <p className="card-text">{p.preco === 0 ? "Preço não encontrado" : "R$" + p.preco}</p>
               </div>
             </div>
           })
