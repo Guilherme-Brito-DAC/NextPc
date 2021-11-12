@@ -5,6 +5,7 @@
     --CorFonte: #585858;
     --Navbar: white;
     --FonteInput: #9e9ea7;
+    --TamanhoItem : 16rem;
   }
 
 body{
@@ -12,4 +13,10 @@ body{
     font-family: 'Roboto', sans-serif;
     font-family: 'Zen Maru Gothic', sans-serif;
     transition: 0.5s;
+}
+
+.fakeNav{
+  width: 100%;
+  height: 7rem;
+  background: none;
 }

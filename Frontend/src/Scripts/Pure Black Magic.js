@@ -1,4 +1,4 @@
-//Fonte
+//Fonte - Temoteo
 JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>({
     nome:el.querySelector(".td__name > a > .td__nameWrapper > p").innerText,
     imagem:el.querySelector(".td__name > a > .td__imageWrapper > div > img").src,
@@ -8,7 +8,7 @@ JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>(
     preco:(parseInt(((el.querySelector(".td__price").innerText).replace("Add","")).replace("$",""))*5.41).toFixed(2),
 })))
 
-//CPU
+//CPU - Diego
 JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>({
     nome:el.querySelector(".td__name > a > .td__nameWrapper > p").innerText,
     imagem:el.querySelector(".td__name > a > .td__imageWrapper > div > img").src,
@@ -19,7 +19,7 @@ JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>(
     preco:(parseInt(((el.querySelector(".td__price").innerText).replace("Add","")).replace("$",""))*5.41).toFixed(2),
 })))
 
-//Placa mãe
+//Placa mãe - Temoteo
 JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>({
     nome:el.querySelector(".td__name > a > .td__nameWrapper > p").innerText,
     imagem:el.querySelector(".td__name > a > .td__imageWrapper > div > img").src,
@@ -31,7 +31,7 @@ JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>(
     preco:(parseInt(((el.querySelector(".td__price").innerText).replace("Add","")).replace("$",""))*5.41).toFixed(2),
 })))
 
-//Placa de vídeo
+//Placa de vídeo - Felipe
 JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>({
     nome:el.querySelector(".td__name > a > .td__nameWrapper > p").innerText,
     imagem:el.querySelector(".td__name > a > .td__imageWrapper > div > img").src,
@@ -42,7 +42,7 @@ JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>(
     preco:(parseInt(((el.querySelector(".td__price").innerText).replace("Add","")).replace("$",""))*5.41).toFixed(2),
 })))
 
-//RAM
+//RAM - Diego
 JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>({
     nome:el.querySelector(".td__name > a > .td__nameWrapper > p").innerText,
     imagem:el.querySelector(".td__name > a > .td__imageWrapper > div > img").src,
@@ -50,7 +50,7 @@ JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>(
     preco:(parseInt(((el.querySelector(".td__price").innerText).replace("Add","")).replace("$",""))*5.41).toFixed(2),
 })))
 
-//Armazenamento
+//Armazenamento - Felipe
 JSON.stringify(Array.from(document.querySelectorAll(".tr__product")).map((el)=>({
     nome:el.querySelector(".td__name > a > .td__nameWrapper > p").innerText,
     imagem:el.querySelector(".td__name > a > .td__imageWrapper > div > img").src,

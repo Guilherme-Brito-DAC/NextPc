@@ -1,11 +1,19 @@
 nav{
     width: 100%;
     height: 5rem;
+    position: fixed;
+    z-index: 1;
     display:flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     background-color: var(--Navbar);
     transition: 0.5s;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.01), 
+              0 2px 2px rgba(0,0,0,0.01), 
+              0 4px 4px rgba(0,0,0,0.01), 
+              0 8px 8px rgba(0,0,0,0.01),
+              0 16px 16px rgba(0,0,0,0.01);
 }
 
 nav div{
@@ -16,24 +24,9 @@ nav div{
     gap: 30px;
 }
 
-.pesquisa{
-    background-color: var(--CorFundo);
-    padding: 0.8rem;
-    color:var(--FonteInput);
-    border-radius: 15px;
-    outline: none;
-    border: none;
-    display:flex;
-    gap: 5px;
+.NavLink{
+    display: flex;
     align-items: center;
-    transition: 0.5s;
-}
-
-.pesquisa input{
-    border: none;
-    outline: none;
-    background: none;
-    color:var(--FonteInput);
 }
 
 .logo{
@@ -59,18 +52,14 @@ a:hover{
     gap: 15px;
 }
 
-.cta{
-    background-color: #20bd73;
-    padding: 0.8rem;
-    color:var(--Navbar);
-    border-radius: 15px;
-}
-
-.cta:hover{
-    color:var(--Navbar);
-}
-
 .ModoNoturno{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.ModoNoturno:focus{
     cursor: pointer;
     border: none;
     outline: none;
