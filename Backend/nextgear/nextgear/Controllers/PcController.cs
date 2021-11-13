@@ -47,6 +47,21 @@ namespace nextgear.Controllers
             }
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("usuario/{id}")]
+        public ActionResult PcUsuario([FromQuery] string ordenar, [FromQuery] string id, [FromQuery] string pagina)
+        {
+            try
+            {
+                return Ok(IPcRepository.ListarPcsDoUsuario(ordenar, int.Parse(id), int.Parse(pagina)));
+            }
+            catch (Exception e)
+            {
+                return BadRequest("Aconteceu algum erro -> " + e.Message);
+            }
+        }
+
         [HttpPost]
         [Authorize]
         public ActionResult Criar([FromBody] Pc Pc)

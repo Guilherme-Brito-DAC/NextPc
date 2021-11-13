@@ -26,17 +26,17 @@ namespace nextgear.Repositories
             Armazenamento = context.Set<Armazenamento>();
         }
 
-        public Paginacao<Ram> ListarRam(string ordenar, string pesquisa, int pagina)
+        public Paginacao<Ram> ListarRam(string pesquisa, int pagina)
         {
             var ram = new List<Ram>();
 
             if (string.IsNullOrEmpty(pesquisa))
             {
-                ram = Ram.OrderBy(ordenar).ToList();
+                ram = Ram.ToList();
             }
             else
             {
-                ram = Ram.OrderBy(ordenar).Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
+                ram = Ram.Where(p => p.nome.Contains(pesquisa.ToLower()) == true).ToList();
             }
 
             var totalPaginas = (int)Math.Ceiling((double)ram.Count() / 100);
@@ -46,23 +46,22 @@ namespace nextgear.Repositories
                 tamanho_pagina = 100,
                 numero_pagina = pagina,
                 total_paginas = totalPaginas,
-                anterior = (pagina > 1) ? $"ram?pagina={pagina - 1}" : "",
-                proximo = (pagina < totalPaginas) ? $"ram?pagina={pagina + 1}" : "",
                 resultado = ram.Skip(100 * (pagina - 1)).Take(100).ToList()
             };
             return resultado;
         }
 
-        public Paginacao<Armazenamento> ListarArmazenamento(string ordenar, string pesquisa, int pagina)
+        public Paginacao<Armazenamento> ListarArmazenamento(string pesquisa, int pagina)
         {
             var armazenamento = new List<Armazenamento>();
+
             if (string.IsNullOrEmpty(pesquisa))
             {
-                armazenamento = Armazenamento.OrderBy(ordenar).ToList();
+                armazenamento = Armazenamento.ToList();
             }
             else
             {
-                armazenamento = Armazenamento.OrderBy(ordenar).Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
+                armazenamento = Armazenamento.Where(p => p.nome.Contains(pesquisa.ToLower()) == true).ToList();
             }
 
             var totalPaginas = (int)Math.Ceiling((double)armazenamento.Count() / 100);
@@ -72,25 +71,22 @@ namespace nextgear.Repositories
                 tamanho_pagina = 100,
                 numero_pagina = pagina,
                 total_paginas = totalPaginas,
-                anterior = (pagina > 1) ? $"armazenamento?pagina={pagina - 1}" : "",
-                proximo = (pagina < totalPaginas) ? $"armazenamento?pagina={pagina + 1}" : "",
                 resultado = armazenamento.Skip(100 * (pagina - 1)).Take(100).ToList()
             };
             return resultado;
         }
 
-        public Paginacao<Placa_mae> ListarPlacaMae(string ordenar, string pesquisa, int pagina)
+        public Paginacao<Placa_mae> ListarPlacaMae(string pesquisa, int pagina)
         {
             var placa_mae = new List<Placa_mae>();
             if (string.IsNullOrEmpty(pesquisa))
             {
-                placa_mae = Placa_mae.OrderBy(ordenar).ToList();
+                placa_mae = Placa_mae.ToList();
             }
             else
             {
-                placa_mae = Placa_mae.OrderBy(ordenar).Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
+                placa_mae = Placa_mae.Where(p => p.nome.Contains(pesquisa.ToLower()) == true).ToList();
             }
-            placa_mae = Placa_mae.OrderBy(ordenar).ToList();
 
             var totalPaginas = (int)Math.Ceiling((double)placa_mae.Count() / 100);
             var resultado = new Paginacao<Placa_mae>
@@ -99,25 +95,22 @@ namespace nextgear.Repositories
                 tamanho_pagina = 100,
                 numero_pagina = pagina,
                 total_paginas = totalPaginas,
-                anterior = (pagina > 1) ? $"placaMae?pagina={pagina - 1}" : "",
-                proximo = (pagina < totalPaginas) ? $"placaMae?pagina={pagina + 1}" : "",
                 resultado = placa_mae.Skip(100 * (pagina - 1)).Take(100).ToList()
             };
             return resultado;
         }
 
-        public Paginacao<Cpu> ListarCpu(string ordenar, string pesquisa, int pagina)
+        public Paginacao<Cpu> ListarCpu(string pesquisa, int pagina)
         {
             var cpu = new List<Cpu>();
             if (string.IsNullOrEmpty(pesquisa))
             {
-                cpu = Cpu.OrderBy(ordenar).ToList();
+                cpu = Cpu.ToList();
             }
             else
             {
-                cpu = Cpu.OrderBy(ordenar).Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
+                cpu = Cpu.Where(p => p.nome.Contains(pesquisa.ToLower()) == true).ToList();
             }
-            cpu = Cpu.OrderBy(ordenar).ToList();
 
             var totalPaginas = (int)Math.Ceiling((double)cpu.Count() / 100);
             var resultado = new Paginacao<Cpu>
@@ -126,25 +119,22 @@ namespace nextgear.Repositories
                 tamanho_pagina = 100,
                 numero_pagina = pagina,
                 total_paginas = totalPaginas,
-                anterior = (pagina > 1) ? $"cpu?pagina={pagina - 1}" : "",
-                proximo = (pagina < totalPaginas) ? $"cpu?pagina={pagina + 1}" : "",
                 resultado = cpu.Skip(100 * (pagina - 1)).Take(100).ToList()
             };
             return resultado;
         }
 
-        public Paginacao<Gpu> ListarGpu(string ordenar, string pesquisa, int pagina)
+        public Paginacao<Gpu> ListarGpu(string pesquisa, int pagina)
         {
             var gpu = new List<Gpu>();
             if (string.IsNullOrEmpty(pesquisa))
             {
-                gpu = Gpu.OrderBy(ordenar).ToList();
+                gpu = Gpu.ToList();
             }
             else
             {
-                gpu = Gpu.OrderBy(ordenar).Where(p => p.chipset.Contains(pesquisa.ToLower())).ToList();
+                gpu = Gpu.Where(p => p.chipset.Contains(pesquisa.ToLower()) == true).ToList();
             }
-            gpu = Gpu.OrderBy(ordenar).ToList();
 
             var totalPaginas = (int)Math.Ceiling((double)gpu.Count() / 100);
             var resultado = new Paginacao<Gpu>
@@ -153,25 +143,22 @@ namespace nextgear.Repositories
                 tamanho_pagina = 100,
                 numero_pagina = pagina,
                 total_paginas = totalPaginas,
-                anterior = (pagina > 1) ? $"gpu?pagina={pagina - 1}" : "",
-                proximo = (pagina < totalPaginas) ? $"gpu?pagina={pagina + 1}" : "",
                 resultado = gpu.Skip(100 * (pagina - 1)).Take(100).ToList()
             };
             return resultado;
         }
 
-        public Paginacao<Fonte> ListarFonte(string ordenar, string pesquisa, int pagina)
+        public Paginacao<Fonte> ListarFonte(string pesquisa, int pagina)
         {
             var fonte = new List<Fonte>();
             if (string.IsNullOrEmpty(pesquisa))
             {
-                fonte = Fonte.OrderBy(ordenar).ToList();
+                fonte = Fonte.ToList();
             }
             else
             {
-                fonte = Fonte.OrderBy(ordenar).Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
+                fonte = Fonte.Where(p => p.nome.Contains(pesquisa.ToLower()) == true).ToList();
             }
-            fonte = Fonte.OrderBy(ordenar).ToList();
 
             var totalPaginas = (int)Math.Ceiling((double)fonte.Count() / 100);
             var resultado = new Paginacao<Fonte>
@@ -180,8 +167,6 @@ namespace nextgear.Repositories
                 tamanho_pagina = 100,
                 numero_pagina = pagina,
                 total_paginas = totalPaginas,
-                anterior = (pagina > 1) ? $"fonte?pagina={pagina - 1}" : "",
-                proximo = (pagina < totalPaginas) ? $"fonte?pagina={pagina + 1}" : "",
                 resultado = fonte.Skip(100 * (pagina - 1)).Take(100).ToList()
             };
             return resultado;

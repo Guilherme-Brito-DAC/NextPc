@@ -45,8 +45,24 @@ namespace nextgear.Repositories
                 tamanho_pagina = 100,
                 numero_pagina = pagina,
                 total_paginas = totalPaginas,
-                anterior = (pagina > 1) ? $"ram?pagina={pagina - 1}" : "",
-                proximo = (pagina < totalPaginas) ? $"ram?pagina={pagina + 1}" : "",
+                resultado = pcsViews.Skip(100 * (pagina - 1)).Take(100).ToList()
+            };
+
+            return resultado;
+        }
+
+        public Paginacao<PcView> ListarPcsDoUsuario(string ordenar, int id, int pagina)
+        {
+            var pcs = _Pc.OrderBy(ordenar).Where(p => p.id == id).ToList();
+            
+            var pcsViews = IPcFormatter.ListPcToListPcView(pcs);
+            var totalPaginas = (int)Math.Ceiling((double)pcsViews.Count() / 100);
+            var resultado = new Paginacao<PcView>
+            {
+                total = pcsViews.Count(),
+                tamanho_pagina = 100,
+                numero_pagina = pagina,
+                total_paginas = totalPaginas,
                 resultado = pcsViews.Skip(100 * (pagina - 1)).Take(100).ToList()
             };
 

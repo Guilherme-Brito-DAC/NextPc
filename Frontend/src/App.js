@@ -16,7 +16,6 @@ function App() {
   const [Token, SetToken] = useState("");
   const [NightMode, SetNightMode] = useState(false);
   const [Tamanho, SetTamanho] = useState("17 rem");
-  const [Pesquisa, SetPesquisa] = useState("");
   const root = document.querySelector(':root');
 
   if (NightMode) {
@@ -45,7 +44,7 @@ function App() {
             <PCs />
           </Route>
           <Route path="/pecas">
-            <Pecas Pesquisa={Pesquisa} SetPesquisa={SetPesquisa} Tamanho={Tamanho} SetTamanho={SetTamanho} />
+            <Pecas Tamanho={Tamanho} SetTamanho={SetTamanho} />
           </Route>
           <Route path="/comunidade">
             <Comunidade />

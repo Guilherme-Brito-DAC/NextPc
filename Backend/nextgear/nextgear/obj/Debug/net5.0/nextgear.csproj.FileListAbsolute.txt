@@ -11,7 +11,6 @@ C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\obj\Debug\net5.0\nextgear.csproj.AssemblyReference.cache
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\obj\Debug\net5.0\nextgear.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\obj\Debug\net5.0\nextgear.AssemblyInfoInputs.cache
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\obj\Debug\net5.0\nextgear.AssemblyInfo.cs
@@ -41,4 +40,4 @@ C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\System.Linq.Dynamic.Core.dll
-C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\obj\Debug\net5.0\nextgear.csproj.CopyComplete
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\Nextgear\nextgear\obj\Debug\net5.0\nextgear.csproj.AssemblyReference.cache

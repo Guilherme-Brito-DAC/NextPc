@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using nextgear.Repositories;
 using System;
+using System.Diagnostics;
 
 namespace nextgear.Controllers
 {
@@ -20,11 +21,11 @@ namespace nextgear.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("armazenamento")]
-        public IActionResult ListarArmazenamento([FromQuery] string ordenar, [FromQuery] string pesquisa, [FromQuery] string pagina)
+        public IActionResult ListarArmazenamento([FromQuery] string pesquisa, [FromQuery] string pagina)
         {
             try
             {
-                return Ok(IPecasRepository.ListarArmazenamento(ordenar, pesquisa, int.Parse(pagina)));
+                return Ok(IPecasRepository.ListarArmazenamento(pesquisa, int.Parse(pagina)));
             }
             catch (Exception e)
             {
@@ -35,11 +36,11 @@ namespace nextgear.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("cpu")]
-        public IActionResult ListarCpu([FromQuery] string ordenar, [FromQuery] string pesquisa, [FromQuery] string pagina)
+        public IActionResult ListarCpu([FromQuery] string pesquisa, [FromQuery] string pagina)
         {
             try
             {
-                return Ok(IPecasRepository.ListarCpu(ordenar, pesquisa, int.Parse(pagina)));
+                return Ok(IPecasRepository.ListarCpu(pesquisa, int.Parse(pagina)));
             }
             catch (Exception e)
             {
@@ -50,11 +51,11 @@ namespace nextgear.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("gpu")]
-        public IActionResult ListarGpu([FromQuery] string ordenar, [FromQuery] string pesquisa, [FromQuery] string pagina)
+        public IActionResult ListarGpu([FromQuery] string pesquisa, [FromQuery] string pagina)
         {
             try
             {
-                return Ok(IPecasRepository.ListarGpu(ordenar, pesquisa, int.Parse(pagina)));
+                return Ok(IPecasRepository.ListarGpu(pesquisa, int.Parse(pagina)));
             }
             catch (Exception e)
             {
@@ -65,11 +66,11 @@ namespace nextgear.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("ram")]
-        public IActionResult ListarRam([FromQuery] string ordenar, [FromQuery] string pesquisa, [FromQuery] string pagina)
+        public IActionResult ListarRam([FromQuery] string pesquisa, [FromQuery] string pagina)
         {
             try
             {
-                return Ok(IPecasRepository.ListarRam(ordenar, pesquisa, int.Parse(pagina)));
+                return Ok(IPecasRepository.ListarRam(pesquisa, int.Parse(pagina)));
             }
             catch (Exception e)
             {
@@ -80,11 +81,11 @@ namespace nextgear.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("fonte")]
-        public IActionResult ListarFonte([FromQuery] string ordenar, [FromQuery] string pesquisa, [FromQuery] string pagina)
+        public IActionResult ListarFonte([FromQuery] string pesquisa, [FromQuery] string pagina)
         {
             try
             {
-                return Ok(IPecasRepository.ListarArmazenamento(ordenar, pesquisa, int.Parse(pagina)));
+                return Ok(IPecasRepository.ListarFonte(pesquisa, int.Parse(pagina)));
             }
             catch (Exception e)
             {
@@ -95,11 +96,11 @@ namespace nextgear.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("placaMae")]
-        public IActionResult ListarPlacaMae([FromQuery] string ordenar, [FromQuery] string pesquisa, [FromQuery] string pagina)
+        public IActionResult ListarPlacaMae([FromQuery] string pesquisa, [FromQuery] string pagina)
         {
             try
             {
-                return Ok(IPecasRepository.ListarPlacaMae(ordenar, pesquisa, int.Parse(pagina)));
+                return Ok(IPecasRepository.ListarPlacaMae(pesquisa, int.Parse(pagina)));
             }
             catch (Exception e)
             {

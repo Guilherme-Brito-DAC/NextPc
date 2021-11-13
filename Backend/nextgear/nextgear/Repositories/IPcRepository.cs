@@ -9,5 +9,6 @@ namespace nextgear.Repositories
         void Editar(Pc Pc);
         Paginacao<PcView> ListarPcs(string ordenar, string pesquisa, int pagina);
         PcView ListarUmPc(int id);
+        Paginacao<PcView> ListarPcsDoUsuario(string ordenar, int id, int pagina);
     }
 }

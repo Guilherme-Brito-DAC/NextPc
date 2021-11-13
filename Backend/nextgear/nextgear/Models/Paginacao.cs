@@ -11,8 +11,6 @@ namespace nextgear.Models
         public int tamanho_pagina { get; set; }
         public int numero_pagina { get; set; }
         public int total_paginas { get; set; }
-        public string anterior { get; set; }
-        public string proximo { get; set; }
         public IList<T> resultado { get; set; }
     }
 }
