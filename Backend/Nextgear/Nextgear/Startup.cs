@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using nextgear.Formatters;
 using nextgear.Repositories;
 using System;
 using System.Text;
@@ -32,6 +33,8 @@ namespace nextgear
 
             services.AddTransient<IPecasRepository, PecasRepository>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IPcFormatter, PcFormatter>();
+            services.AddTransient<IPcRepository, PcRepository>();
 
             string connectionString = Configuration.GetConnectionString("Default");
 

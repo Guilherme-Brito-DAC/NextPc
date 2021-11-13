@@ -24,6 +24,7 @@ namespace nextgear
             modelBuilder.Entity<Fonte>().HasKey(t => t.id);
             modelBuilder.Entity<Placa_mae>().HasKey(t => t.id);
             modelBuilder.Entity<Ram>().HasKey(t => t.id);
+            modelBuilder.Entity<Pc>().HasKey(t => t.id);
             modelBuilder.Entity<Usuario>().HasKey(t => t.id);
         }
     }

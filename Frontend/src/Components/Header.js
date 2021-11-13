@@ -44,7 +44,7 @@ export default function Header(Prop) {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <img src="https://img.icons8.com/material-outlined/24/585858/menu--v1.png"/>
+            <img src="https://img.icons8.com/material-outlined/24/585858/menu--v1.png" alt=""/>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">

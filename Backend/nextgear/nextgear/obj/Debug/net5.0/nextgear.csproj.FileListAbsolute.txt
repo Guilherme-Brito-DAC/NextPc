@@ -40,3 +40,5 @@ C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\bin\Debug\net5.0\System.Linq.Dynamic.Core.dll
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\obj\Debug\net5.0\nextgear.csproj.CopyComplete

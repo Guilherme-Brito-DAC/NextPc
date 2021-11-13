@@ -2,74 +2,62 @@
 using Microsoft.AspNetCore.Mvc;
 using nextgear.Models;
 using nextgear.Repositories;
-using nextgear.Services;
 using System;
 using System.Linq;
 
 namespace nextgear.Controllers
 {
     [ApiController]
-    [Route("api/usuario")]
-    public class UsuarioController : Controller
+    [Route("api/pc")]
+    public class PcController : Controller
     {
-        private readonly IUsuarioRepository IUsuarioRepository;
+        private readonly IPcRepository IPcRepository;
 
-        public UsuarioController(IUsuarioRepository iUsuarioRepository)
+        public PcController(IPcRepository iPcRepository)
         {
-            IUsuarioRepository = iUsuarioRepository;
+            IPcRepository = iPcRepository;
         }
 
-        [HttpPost]
+        [HttpGet]
         [AllowAnonymous]
-        [Route("cadastrar")]
-        public ActionResult Cadastrar([FromBody] Usuario Usuario)
+        public ActionResult ListarPcs([FromQuery] string ordenar, [FromQuery] string pesquisa, [FromQuery] string pagina)
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    IUsuarioRepository.Cadastrar(Usuario);
-
-                    return Ok("Usuario cadastrado com sucesso!");
-                }
-
-                string error = string.Join("; ", ModelState.Values
-                                       .SelectMany(x => x.Errors)
-                                       .Select(x => x.ErrorMessage));
-
-                return BadRequest("Dados Inválidos - > " + error);
+                return Ok(IPcRepository.ListarPcs(ordenar, pesquisa, int.Parse(pagina)));
             }
             catch (Exception e)
             {
-                return BadRequest("Erro -> " + e.Message);
+                return BadRequest("Aconteceu algum erro -> " + e.Message);
+            }
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("{id}")]
+        public ActionResult Detalhes(int id)
+        {
+            try
+            {
+                return Ok(IPcRepository.ListarUmPc(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest("Aconteceu algum erro -> " + e.Message);
             }
         }
 
         [HttpPost]
-        [AllowAnonymous]
-        [Route("login")]
-        public ActionResult Login([FromBody] UsuarioLogin Usuario)
+        [Authorize]
+        public ActionResult Criar([FromBody] Pc Pc)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (IUsuarioRepository.Login(Usuario.usuario, Usuario.senha))
-                    {
-                        var token = TokenService.GerarToken(Usuario);
+                    IPcRepository.Criar(Pc);
 
-                        var retorno = new
-                        {
-                            usuario = IUsuarioRepository.ListarUmUsuario(Usuario.usuario, Usuario.senha),
-                            token = token
-                        };
-
-                        return Ok(retorno);
-                    }
-                    else
-                    {
-                        return BadRequest("Usuario ou senha incorretos");
-                    }
+                    return Ok("Pc criado com sucesso!");
                 }
 
                 string error = string.Join("; ", ModelState.Values
@@ -86,15 +74,15 @@ namespace nextgear.Controllers
 
         [HttpPut]
         [Authorize]
-        public ActionResult Editar([FromBody]Usuario Usuario)
+        public ActionResult Editar([FromBody] Pc Pc)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    IUsuarioRepository.Editar(Usuario);
+                    IPcRepository.Editar(Pc);
 
-                    return Ok("Usuario editado com sucesso!");
+                    return Ok("Pc editado com sucesso!");
                 }
 
                 string error = string.Join("; ", ModelState.Values
@@ -111,15 +99,15 @@ namespace nextgear.Controllers
 
         [HttpDelete]
         [Authorize]
-        public ActionResult Deletar([FromBody] Usuario Usuario)
+        public ActionResult Deletar([FromBody] Pc Pc)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    IUsuarioRepository.Deletar(Usuario);
+                    IPcRepository.Deletar(Pc);
 
-                    return Ok("Usuario deletado com sucesso!");
+                    return Ok("Pc deletado com sucesso!");
                 }
 
                 string error = string.Join("; ", ModelState.Values

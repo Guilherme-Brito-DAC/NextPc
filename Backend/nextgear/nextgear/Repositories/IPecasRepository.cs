@@ -1,27 +1,20 @@
 ﻿using nextgear.Models;
-using System.Collections.Generic;
 
 namespace nextgear.Repositories
 {
     public interface IPecasRepository
     {
-        IList<Armazenamento> ListarArmazenamento();
-        IList<Cpu> ListarCpu();
-        IList<Fonte> ListarFonte();
-        IList<Gpu> ListarGpu();
-        IList<Placa_mae> ListarPlacaMae();
-        IList<Ram> ListarRam();
+        Paginacao<Armazenamento> ListarArmazenamento(string ordenar, string pesquisa, int pagina);
+        Paginacao<Cpu> ListarCpu(string ordenar, string pesquisa, int pagina);
+        Paginacao<Fonte> ListarFonte(string ordenar, string pesquisa, int pagina);
+        Paginacao<Gpu> ListarGpu(string ordenar, string pesquisa, int pagina);
+        Paginacao<Placa_mae> ListarPlacaMae(string ordenar, string pesquisa, int pagina);
+        Paginacao<Ram> ListarRam(string ordenar, string pesquisa, int pagina);
         Cpu ListarUmaCpu(int id);
         Fonte ListarUmaFonte(int id);
         Gpu ListarUmaGpu(int id);
         Placa_mae ListarUmaPlacaMae(int id);
         Ram ListarUmaRam(int id);
         Armazenamento ListarUmArmazenamento(int id);
-        IList<Armazenamento> PesquisarArmazenamento(string pesquisa);
-        IList<Cpu> PesquisarCpu(string pesquisa);
-        IList<Fonte> PesquisarFonte(string pesquisa);
-        IList<Gpu> PesquisarGpu(string pesquisa);
-        IList<Placa_mae> PesquisarPlaca_mae(string pesquisa);
-        IList<Ram> PesquisarRam(string pesquisa);
     }
 }

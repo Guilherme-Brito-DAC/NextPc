@@ -52,5 +52,10 @@ namespace nextgear.Repositories
         {
             return _Usuario.Where(u => u.usuario.ToLower() == p_usuario.ToLower() && u.senha.ToLower() == senha.ToLower()).ToList().SingleOrDefault();
         }
+
+        public Usuario ListarUmUsuario(int id)
+        {
+            return _Usuario.Where(u => u.id == id).ToList().SingleOrDefault();
+        }
     }
 }

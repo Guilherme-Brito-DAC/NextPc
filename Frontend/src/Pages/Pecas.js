@@ -3,13 +3,14 @@ import './Pecas.css'
 
 function Pecas(prop) {
   const root = document.querySelector(':root');
-  const [pecas,setPecas] = useState([]);
+  const [pecas, setPecas] = useState([]);
+  const [Loading, SetLoading] = useState(true);
 
   function HandleChange(event) {
     prop.SetPesquisa(event.target.value)
   }
 
-  function HandleSize(event){
+  function HandleSize(event) {
     prop.SetTamanho(event.target.value)
     root.style.setProperty('--TamanhoItem', event.target.value + 'rem');
   }
@@ -62,6 +63,12 @@ function Pecas(prop) {
         </div>
       </div>
       <div className="pecas">
+        {
+          Loading &&
+          <div style={{width:"100%",display:"flex",justifyContent:"center",marginTop:"100px"}}>
+            <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+          </div>
+        }
         {
           pecas.map(function (p, i) {
             return <div className="card" key={i}>
