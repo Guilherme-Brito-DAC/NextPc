@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './Components/Header'
+import Footer from './Components/Footer'
 import Pecas from './Pages/Pecas'
 import Home from './Pages/Home'
 import Comunidade from './Pages/Comunidade'
@@ -59,6 +60,7 @@ function App() {
             <Conta Token={Token} />
           </Route>
         </div>
+        <Footer/>
       </Router>
     </>
   )

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Home.css'
 
-function Login(Prop) {
+function Login({SetUsuario,SetToken}) {
     const [UsuarioForm, SetUsuarioForm] = useState({
         "usuario": "",
         "senha": "",
@@ -19,11 +19,8 @@ function Login(Prop) {
             body: JSON.stringify(UsuarioForm)
         }).then(response =>  response.json())
           .then(result => {
-
-                console.log(result)
-
-                Prop.SetUsuario(result.usuario)
-                Prop.SetToken(result.token)
+                SetUsuario(result.usuario)
+                SetToken(result.token)
           })
     }
 

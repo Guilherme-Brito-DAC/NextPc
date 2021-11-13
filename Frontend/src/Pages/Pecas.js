@@ -40,6 +40,7 @@ function Pecas(prop) {
       .then(result => {
         SetInfo(result)
         setPecas(result.resultado)
+        console.log(result)
       })
     SetLoading(false)
   }, [Pagina, PecaASerPesquisa, Pesquisa])
