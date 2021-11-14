@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Linq;
 using nextgear.Models;
 using nextgear.Repositories;
 using nextgear.Services;
-using System;
-using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace nextgear.Controllers
 {
@@ -68,7 +68,7 @@ namespace nextgear.Controllers
                     }
                     else
                     {
-                        return BadRequest("Usuario ou senha incorretos");
+                        return BadRequest(new[] { "Usuario ou senha incorretos" });
                     }
                 }
 
@@ -94,7 +94,7 @@ namespace nextgear.Controllers
                 {
                     IUsuarioRepository.Editar(Usuario);
 
-                    return Ok("Usuario editado com sucesso!");
+                    return Ok(new[] { "Usuario editado com sucesso!" });
                 }
 
                 string error = string.Join("; ", ModelState.Values
@@ -119,7 +119,7 @@ namespace nextgear.Controllers
                 {
                     IUsuarioRepository.Deletar(Usuario);
 
-                    return Ok("Usuario deletado com sucesso!");
+                    return Ok(new[] { "Usuario deletado com sucesso!" });
                 }
 
                 string error = string.Join("; ", ModelState.Values

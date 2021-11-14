@@ -6,6 +6,11 @@ namespace nextgear
 {
     public class ApplicationContext : DbContext
     {
+        public ApplicationContext()
+        {
+
+        }
+
         public ApplicationContext([NotNullAttribute] DbContextOptions options) : base(options)
         {
 

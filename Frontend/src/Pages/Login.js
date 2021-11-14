@@ -17,11 +17,17 @@ function Login({SetUsuario,SetToken}) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(UsuarioForm)
-        }).then(response =>  response.json())
-          .then(result => {
-                SetUsuario(result.usuario)
-                SetToken(result.token)
-          })
+        }).then(async response => {
+            const result = await response.json()
+
+            if(response.status === 200)
+            {
+                
+            }
+
+            SetUsuario(result.usuario)
+            SetToken(result.token)
+        })
     }
 
     return (

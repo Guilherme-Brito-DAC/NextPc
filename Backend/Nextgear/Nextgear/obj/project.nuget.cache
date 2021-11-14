@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OojwoZ+v1VxnvXaE0sU8tzPgNW1nqVUMh4F6t4f9B/e3b9tAM30Fz+TMav8aT/12pNn6p01XJpFTGFLoSUm5pQ==",
+  "dgSpecHash": "m/2vGeDY9LCvowWLfB3g8tW0eQhmQR88HMDoejIb1I975vmNa4FnvrPdhAXVDTx+PKdk1uGfMm4G4sxJdvy9bw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\Nextgear\\nextgear\\nextgear.csproj",
+  "projectFilePath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\Nextgear\\nextgear\\NextPc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\guilh\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.12\\microsoft.aspnetcore.authentication.jwtbearer.5.0.12.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
@@ -13,6 +13,7 @@
     "C:\\Users\\guilh\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.12\\microsoft.entityframeworkcore.5.0.12.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.12\\microsoft.entityframeworkcore.abstractions.5.0.12.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.12\\microsoft.entityframeworkcore.analyzers.5.0.12.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\5.0.12\\microsoft.entityframeworkcore.inmemory.5.0.12.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.10\\microsoft.entityframeworkcore.relational.5.0.10.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",

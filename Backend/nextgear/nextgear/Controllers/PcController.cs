@@ -72,7 +72,7 @@ namespace nextgear.Controllers
                 {
                     IPcRepository.Criar(Pc);
 
-                    return Ok("Pc criado com sucesso!");
+                    return Ok(new[] { "Pc criado com sucesso!" });
                 }
 
                 string error = string.Join("; ", ModelState.Values
@@ -96,8 +96,7 @@ namespace nextgear.Controllers
                 if (ModelState.IsValid)
                 {
                     IPcRepository.Editar(Pc);
-
-                    return Ok("Pc editado com sucesso!");
+                    return Ok(new[] { "Pc editado com sucesso!" });
                 }
 
                 string error = string.Join("; ", ModelState.Values
@@ -121,8 +120,7 @@ namespace nextgear.Controllers
                 if (ModelState.IsValid)
                 {
                     IPcRepository.Deletar(Pc);
-
-                    return Ok("Pc deletado com sucesso!");
+                    return Ok(new[] { "Pc deletado com sucesso!" });
                 }
 
                 string error = string.Join("; ", ModelState.Values

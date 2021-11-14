@@ -10,7 +10,7 @@ function Pecas(prop) {
   const [SearchInput, SetInput] = useState("")
   const [pecas, setPecas] = useState([])
   const [Loading, SetLoading] = useState(true)
-  const [PecaASerPesquisa, SetPecaASerPesquisa] = useState("cpu")
+  const [PecaASerPesquisa, SetPecaASerPesquisa] = useState("")
   const [Pagina, SetPagina] = useState(1)
   const [Info, SetInfo] = useState()
   const { peca, pagina, pesquisa } = useParams()
@@ -18,6 +18,7 @@ function Pecas(prop) {
   useEffect(() => {
     SetPecaASerPesquisa(peca)
     SetPagina(pagina)
+    
     if (pesquisa !== undefined) 
     {
       SetPesquisa(pesquisa)
@@ -41,7 +42,7 @@ function Pecas(prop) {
     SetLoading(true)
 
     window.history.pushState({}, null, `/pecas/${PecaASerPesquisa}/${Pagina}/${Pesquisa}`);
-
+    
     fetch(`https://localhost:5001/api/pecas/${PecaASerPesquisa}?pesquisa=${Pesquisa}&pagina=${Pagina}`, {
       method: 'GET',
       mode: 'cors',
@@ -53,12 +54,20 @@ function Pecas(prop) {
         SetInfo(result)
         setPecas(result.resultado)
       })
+
     SetLoading(false)
   }, [Pagina, PecaASerPesquisa, Pesquisa])
 
   function HandleSubmit(e) {
     e.preventDefault()
+    SetPagina(1)
     SetPesquisa(SearchInput)
+  }
+
+  function Reset(){
+    SetPagina(1)
+    SetPesquisa("")
+    SetInput("")
   }
 
   return (
@@ -68,27 +77,27 @@ function Pecas(prop) {
         <input type="text" placeholder="Pesquisa uma Peça" value={SearchInput} onChange={(e) => SetInput(e.target.value)} />
       </form>
       <div className="pecaASerPesquisada">
-        <button className={Ativo("cpu")} onClick={() => { SetPecaASerPesquisa("cpu"); SetPagina(1) ; SetPesquisa("") ; SetInput("")}}>
+        <button className={Ativo("cpu")} onClick={() => { SetPecaASerPesquisa("cpu"); Reset()}}>
           <img src="https://img.icons8.com/color/40/000000/processor.png" alt="" />
           CPU
         </button>
-        <button className={Ativo("gpu")} onClick={() => { SetPecaASerPesquisa("gpu"); SetPagina(1) ; SetPesquisa("") ; SetInput("")}}>
+        <button className={Ativo("gpu")} onClick={() => { SetPecaASerPesquisa("gpu"); Reset()}}>
           <img src="https://img.icons8.com/color/40/000000/video-card.png" alt="" />
           GPU
         </button>
-        <button className={Ativo("ram")} onClick={() => { SetPecaASerPesquisa("ram"); SetPagina(1) ; SetPesquisa("") ; SetInput("")}}>
+        <button className={Ativo("ram")} onClick={() => { SetPecaASerPesquisa("ram"); Reset()}}>
           <img src="https://img.icons8.com/color/40/000000/memory-slot.png" alt="" />
           Memória RAM
         </button>
-        <button className={Ativo("placaMae")} onClick={() => { SetPecaASerPesquisa("placaMae"); SetPagina(1) ; SetPesquisa("") ; SetInput("")}}>
+        <button className={Ativo("placaMae")} onClick={() => { SetPecaASerPesquisa("placaMae"); Reset()}}>
           <img src="https://img.icons8.com/color/40/000000/motherboard.png" alt="" />
           Placa Mãe
         </button>
-        <button className={Ativo("armazenamento")} onClick={() => { SetPecaASerPesquisa("armazenamento"); SetPagina(1) ; SetPesquisa("") ; SetInput("")}}>
+        <button className={Ativo("armazenamento")} onClick={() => { SetPecaASerPesquisa("armazenamento"); Reset()}}>
           <img src="https://img.icons8.com/color/40/000000/ssd.png" alt="" />
           Armazenamento
         </button>
-        <button className={Ativo("fonte")} onClick={() => { SetPecaASerPesquisa("fonte"); SetPagina(1) ; SetPesquisa("") ; SetInput("")}}>
+        <button className={Ativo("fonte")} onClick={() => { SetPecaASerPesquisa("fonte"); Reset()}}>
           <img src="https://img.icons8.com/ios-filled/40/ffea03/lightning-bolt--v1.png" alt="" />
           Fonte
         </button>
