@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Pagination from '../Components/Pagination'
 import { useParams } from "react-router-dom";
 import './Pecas.css'
+import Erro  from '../Components/Erro'
 
 function Pecas(prop) {
   const root = document.querySelector(':root')
@@ -23,8 +24,6 @@ function Pecas(prop) {
       SetInput(pesquisa)
     }
   }, [])
-
-  console.log(useParams())
 
   function HandleSize(event) {
     prop.SetTamanho(event.target.value)
@@ -61,7 +60,6 @@ function Pecas(prop) {
     e.preventDefault()
     SetPesquisa(SearchInput)
   }
-
 
   return (
     <>
@@ -103,8 +101,10 @@ function Pecas(prop) {
       </div>
 
       {
-        Info != null &&
+        Info !== null && pecas.length !== 0 ?
         <Pagination info={Info} SetPagina={SetPagina} />
+        :
+        <Erro />
       }
 
       <div className="pecas">
@@ -114,6 +114,7 @@ function Pecas(prop) {
             <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
           </div>
         }
+
         {
           pecas.map(function (p, i) {
             return <div className="card" key={i}>
@@ -129,7 +130,7 @@ function Pecas(prop) {
       </div>
 
       {
-        Info != null &&
+        Info !== null && pecas.length !== 0 &&
         <Pagination info={Info} SetPagina={SetPagina} />
       }
     </>

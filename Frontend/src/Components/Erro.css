@@ -1,0 +1,10 @@
+.Erro{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.ErrorMessage{
+    color:var(--CorFonte)
+}

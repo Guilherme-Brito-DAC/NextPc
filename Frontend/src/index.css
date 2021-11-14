@@ -3114,7 +3114,7 @@ textarea.form-control-lg {
 }
 
 .btn-success {
-  color: var(--Navbar);
+  color: white;
   background-color: var(--Selecionado);
   border-color: var(--Selecionado);
   box-shadow: 0 1px 1px rgba(0,0,0,0.02), 
@@ -3124,26 +3124,23 @@ textarea.form-control-lg {
               0 16px 16px rgba(0,0,0,0.02);
 }
 .btn-success:hover {
-  color: var(--Navbar);
+  color: white;
   background-color: var(--Selecionado);
   border-color: var(--Selecionado);
 }
 .btn-check:focus + .btn-success, .btn-success:focus {
-  color: var(--Navbar);
+  color: white;
   background-color: var(--Selecionado);
-  border-color: var(--Selecionado);
-  box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, 0.5);
 }
 .btn-check:checked + .btn-success, .btn-check:active + .btn-success, .btn-success:active, .btn-success.active, .show > .btn-success.dropdown-toggle {
-  color: var(--CorFonte);
+  color: white;
   background-color: var(--Selecionado);
-  border-color: #13653f;
 }
 .btn-check:checked + .btn-success:focus, .btn-check:active + .btn-success:focus, .btn-success:active:focus, .btn-success.active:focus, .show > .btn-success.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, 0.5);
+  box-shadow: 0 0 0 0.25rem var(--Selecionado) 0.5;
 }
 .btn-success:disabled, .btn-success.disabled {
-  color: var(--CorFonte);
+  color: white;
   background-color: var(--Selecionado);
   border-color: var(--Selecionado);
 }
@@ -3978,7 +3975,7 @@ textarea.form-control-lg {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: var(--Navbar);
+  color: white;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -4843,7 +4840,7 @@ textarea.form-control-lg {
 }
 
 .ativo{
-  color: var(--Navbar);
+  color: white;
   background-color: var(--Selecionado);
 }
 
