@@ -50,7 +50,7 @@ export default function Header(Prop) {
             <div className="navbar-nav">
               <NavLink tag={Link} className="NavLink" title="Monte Seu PC" to="/pc"><img src="https://img.icons8.com/ios-filled/20/9e9ea7/wrench.png" alt="" />Monte seu PC</NavLink>
               <NavLink tag={Link} className="NavLink" title="Comunidade" to="/comunidade"><img src="https://img.icons8.com/ios-glyphs/20/9e9ea7/monitor.png" alt="" />PCs Prontos</NavLink>
-              <NavLink tag={Link} className="NavLink" title="Peças" to="/pecas"><img src="https://img.icons8.com/ios-glyphs/20/9e9ea7/search--v1.png" alt="" /> Procurar Peças</NavLink>
+              <NavLink tag={Link} className="NavLink" title="Peças" to="/pecas/cpu/1"><img src="https://img.icons8.com/ios-glyphs/20/9e9ea7/search--v1.png" alt="" /> Procurar Peças</NavLink>
             </div>
           </div>
           <button type="button" className="ModoNoturno" onClick={() => Prop.SetNightMode(!Prop.NightMode)}  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Modo Noturno">

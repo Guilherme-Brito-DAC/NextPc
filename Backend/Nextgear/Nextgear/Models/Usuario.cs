@@ -30,6 +30,8 @@ namespace nextgear.Models
         [Display(Name = "Senha")]
         [MaxLength(250, ErrorMessage = "A senha deve ter menos que 250 caracteres"), MinLength(5, ErrorMessage = "A senha deve ter mais que 5 caracteres")]
         public string senha { get; set; }
+        [Display(Name = "imagem")]
+        public string imagem { get; set; }
         [Display(Name = "Modo Noturno")]
         public bool modoNoturno { get; set; }
     }

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './Components/Header'
-import Footer from './Components/Footer'
 import Pecas from './Pages/Pecas'
 import Home from './Pages/Home'
 import Comunidade from './Pages/Comunidade'
@@ -44,7 +43,7 @@ function App() {
           <Route path="/pc">
             <PCs />
           </Route>
-          <Route path="/pecas">
+          <Route path="/pecas/:peca/:pagina/:pesquisa?">
             <Pecas Tamanho={Tamanho} SetTamanho={SetTamanho} />
           </Route>
           <Route path="/comunidade">
@@ -57,10 +56,9 @@ function App() {
           <Cadastro />
         </Route>
           <Route path="/conta">
-            <Conta Token={Token} />
+            <Conta Usuario={Usuario} Token={Token} />
           </Route>
         </div>
-        <Footer/>
       </Router>
     </>
   )

@@ -30,7 +30,7 @@ namespace nextgear.Controllers
                 {
                     IUsuarioRepository.Cadastrar(Usuario);
 
-                    return Ok("Usuario cadastrado com sucesso!");
+                    return Ok(new[] { "Usuario cadastrado com sucesso!" });
                 }
 
                 string error = string.Join("; ", ModelState.Values

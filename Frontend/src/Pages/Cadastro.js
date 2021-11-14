@@ -14,7 +14,7 @@ function Cadastro() {
     function HandleSubmit(e) {
         e.preventDefault();
 
-        fetch('https://localhost:5001/api/usuario/login', {
+        fetch('https://localhost:5001/api/usuario/cadastrar', {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -31,12 +31,12 @@ function Cadastro() {
         <>
             <form onSubmit={HandleSubmit}>
 
-                <div class="row">
-                    <div class="col">
-                        <input type="text" class="form-control" value={UsuarioForm.nome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, nome: e.target.value }) }} placeholder="Nome" aria-label="Nome" />
+                <div className="row">
+                    <div className="col">
+                        <input type="text" className="form-control" value={UsuarioForm.nome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, nome: e.target.value }) }} placeholder="Nome" aria-label="Nome" />
                     </div>
-                    <div class="col">
-                        <input type="text" class="form-control" value={UsuarioForm.sobrenome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, sobrenome: e.target.value }) }}placeholder="Sobrenome" aria-label="Sobrenome" />
+                    <div className="col">
+                        <input type="text" className="form-control" value={UsuarioForm.sobrenome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, sobrenome: e.target.value }) }}placeholder="Sobrenome" aria-label="Sobrenome" />
                     </div>
                 </div>
 
