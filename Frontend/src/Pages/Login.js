@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './Home.css'
+import './Forms.css'
 
-function Login({SetUsuario,SetToken}) {
+function Login({ SetUsuario, SetToken }) {
     const [UsuarioForm, SetUsuarioForm] = useState({
         "usuario": "",
         "senha": "",
@@ -20,9 +20,8 @@ function Login({SetUsuario,SetToken}) {
         }).then(async response => {
             const result = await response.json()
 
-            if(response.status === 200)
-            {
-                    
+            if (response.status === 200) {
+
             }
 
             SetUsuario(result.usuario)
@@ -32,14 +31,22 @@ function Login({SetUsuario,SetToken}) {
 
     return (
         <>
-            <form onSubmit={HandleSubmit}>
+            <form className="background" onSubmit={HandleSubmit}>
 
-                <input type="text" className="form-control" value={UsuarioForm.usuario} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, usuario: e.target.value }) }} placeholder="Usuario" required />
+                <div className="form">
 
-                <input type="password" className="form-control" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
+                    <input type="text" className="form-control" value={UsuarioForm.usuario} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, usuario: e.target.value }) }} placeholder="Usuario" required />
 
-                <button type="submit" className="btn btn-success">Login</button>
+                    <br />
 
+                    <input type="password" className="form-control" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
+
+                    <br />
+
+                    <button type="submit" className="btn btn-success">Login</button>
+                
+                </div>
+            
             </form>
         </>
     )

@@ -1,0 +1,11 @@
+.background{
+    background-color: white;
+    box-shadow: black;
+    border-radius: 10px;
+    padding: 3rem;
+}
+
+button{
+    display: block; 
+    margin: auto;
+}
