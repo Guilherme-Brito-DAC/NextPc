@@ -24,6 +24,7 @@ function App() {
     root.style.setProperty('--Navbar', '#151515');
     root.style.setProperty('--FonteInput', 'white');
     root.style.setProperty('--BlackEWhite', 'white');
+    root.style.setProperty('--CorFundoForm', '#333333');
   }
   else {
     root.style.setProperty('--CorFundo', '#f1f1f1');
@@ -31,6 +32,7 @@ function App() {
     root.style.setProperty('--Navbar', 'white');
     root.style.setProperty('--FonteInput', '#9e9ea7');
     root.style.setProperty('--BlackEWhite', 'black');
+    root.style.setProperty('--CorFundoForm', 'white');
   }
 
   return (

@@ -13,6 +13,7 @@ html{
     --TamanhoItem : 16rem;
     --Selecionado : #00bbf9;
     --BlackEWhite : Black;
+    --CorFundoForm: white;
   }
 
 body{
