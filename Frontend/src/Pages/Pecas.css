@@ -79,3 +79,10 @@
 .tamanho input{
     cursor: pointer;
 }
+
+.resultados{
+    transition: 0.5s;
+    text-align: center;
+    margin: 1rem;
+    color: var(--BlackEWhite);
+}

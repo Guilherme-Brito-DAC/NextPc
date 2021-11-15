@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using nextgear.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace nextgear.Repositories
 {
@@ -20,14 +17,7 @@ namespace nextgear.Repositories
         {
             var usuario = _Usuario.Where(u => u.usuario.ToLower() == p_usuario.ToLower() && u.senha.ToLower() == senha.ToLower()).ToList().Count();
 
-            if (usuario > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return usuario > 0 ? true : false;
         }
 
         public void Cadastrar(Usuario Usuario)

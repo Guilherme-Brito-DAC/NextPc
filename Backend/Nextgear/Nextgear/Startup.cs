@@ -28,7 +28,7 @@ namespace nextgear
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "nextgear", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NextPc", Version = "v1" });
             });
 
             services.AddTransient<IPecasRepository, PecasRepository>();

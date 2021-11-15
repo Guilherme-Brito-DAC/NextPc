@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using nextgear.Formatters;
 using nextgear.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 
@@ -26,47 +24,22 @@ namespace nextgear.Repositories
             return IPcFormatter.PcToPcView(pc);
         }
 
-        public Paginacao<PcView> ListarPcs(string ordenar, string pesquisa, int pagina)
+        public Paginacao<PcView> ListarPcs(string pesquisa, int pagina)
         {
-            var pcs = new List<Pc>();
-            if (string.IsNullOrEmpty(pesquisa))
-            {
-                pcs = _Pc.OrderBy(ordenar).ToList();
-            }
-            else
-            {
-                pcs = _Pc.OrderBy(ordenar).Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
-            }
-            var pcsViews = IPcFormatter.ListPcToListPcView(pcs);
-            var totalPaginas = (int)Math.Ceiling((double)pcsViews.Count() / 100);
-            var resultado = new Paginacao<PcView>
-            {
-                total = pcsViews.Count(),
-                tamanho_pagina = 100,
-                numero_pagina = pagina,
-                total_paginas = totalPaginas,
-                resultado = pcsViews.Skip(100 * (pagina - 1)).Take(100).ToList()
-            };
+            var pcs = string.IsNullOrEmpty(pesquisa) ? _Pc.ToList() : _Pc.Where(p => p.nome.Contains(pesquisa.ToLower())).ToList();
 
-            return resultado;
+            var pcsViews = IPcFormatter.ListPcToListPcView(pcs);
+
+            return Paginacao<PcView>.ToPaginacao(pcsViews, pagina);
         }
 
-        public Paginacao<PcView> ListarPcsDoUsuario(string ordenar, int id, int pagina)
+        public Paginacao<PcView> ListarPcsDoUsuario(int id, int pagina)
         {
-            var pcs = _Pc.OrderBy(ordenar).Where(p => p.id == id).ToList();
-            
-            var pcsViews = IPcFormatter.ListPcToListPcView(pcs);
-            var totalPaginas = (int)Math.Ceiling((double)pcsViews.Count() / 100);
-            var resultado = new Paginacao<PcView>
-            {
-                total = pcsViews.Count(),
-                tamanho_pagina = 100,
-                numero_pagina = pagina,
-                total_paginas = totalPaginas,
-                resultado = pcsViews.Skip(100 * (pagina - 1)).Take(100).ToList()
-            };
+            var pcs = _Pc.Where(p => p.id == id).ToList();
 
-            return resultado;
+            var pcsViews = IPcFormatter.ListPcToListPcView(pcs);
+
+            return Paginacao<PcView>.ToPaginacao(pcsViews, pagina);
         }
 
         public void Criar(Pc Pc)

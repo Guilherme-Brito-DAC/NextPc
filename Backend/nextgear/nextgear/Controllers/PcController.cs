@@ -20,11 +20,11 @@ namespace nextgear.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult ListarPcs([FromQuery] string ordenar, [FromQuery] string pesquisa, [FromQuery] string pagina)
+        public ActionResult ListarPcs([FromQuery] string pesquisa, [FromQuery] string pagina)
         {
             try
             {
-                return Ok(IPcRepository.ListarPcs(ordenar, pesquisa, int.Parse(pagina)));
+                return Ok(IPcRepository.ListarPcs(pesquisa, int.Parse(pagina)));
             }
             catch (Exception e)
             {
@@ -50,11 +50,11 @@ namespace nextgear.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("usuario/{id}")]
-        public ActionResult PcUsuario([FromQuery] string ordenar, [FromQuery] string id, [FromQuery] string pagina)
+        public ActionResult PcUsuario([FromQuery] string id, [FromQuery] string pagina)
         {
             try
             {
-                return Ok(IPcRepository.ListarPcsDoUsuario(ordenar, int.Parse(id), int.Parse(pagina)));
+                return Ok(IPcRepository.ListarPcsDoUsuario(int.Parse(id), int.Parse(pagina)));
             }
             catch (Exception e)
             {

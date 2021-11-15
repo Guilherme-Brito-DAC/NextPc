@@ -57,10 +57,12 @@ namespace nextgear.Controllers
                     if (IUsuarioRepository.Login(Usuario.usuario, Usuario.senha))
                     {
                         var token = TokenService.GerarToken(Usuario);
+                        var user = IUsuarioRepository.ListarUmUsuario(Usuario.usuario, Usuario.senha);
+                        user.senha = "";
 
                         var retorno = new
                         {
-                            usuario = IUsuarioRepository.ListarUmUsuario(Usuario.usuario, Usuario.senha),
+                            usuario = user,
                             token = token
                         };
 

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React , { useState } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './Components/Header'
 import Pecas from './Pages/Pecas'
@@ -23,12 +23,14 @@ function App() {
     root.style.setProperty('--CorFonte', '#757475');
     root.style.setProperty('--Navbar', '#151515');
     root.style.setProperty('--FonteInput', 'white');
+    root.style.setProperty('--BlackEWhite', 'white');
   }
   else {
     root.style.setProperty('--CorFundo', '#f1f1f1');
     root.style.setProperty('--CorFonte', '#585858');
     root.style.setProperty('--Navbar', 'white');
     root.style.setProperty('--FonteInput', '#9e9ea7');
+    root.style.setProperty('--BlackEWhite', 'black');
   }
 
   return (
