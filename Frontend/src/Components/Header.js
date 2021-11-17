@@ -9,7 +9,7 @@ export default function Header(Prop) {
   function VerificaUsuario() {
     if (Prop.Usuario !== null) {
       return <div>
-        <NavLink tag={Link} className="NavLink" className="btn btn-success" title="Conta" to="/conta" >Conta</NavLink>
+        <NavLink tag={Link} className="btn btn-success" title="Conta" to="/conta" >Conta</NavLink>
       </div>
     }
     else {
@@ -30,8 +30,6 @@ export default function Header(Prop) {
   }
 
   let location = useLocation().pathname
-
-  console.log(useLocation().pathname)
 
   if (location !== "/login" && location !== "/cadastro") {
     return (

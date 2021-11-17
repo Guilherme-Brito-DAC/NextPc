@@ -9,7 +9,6 @@ import Login from './Pages/Login'
 import Cadastro from './Pages/Cadastro'
 import Conta from './Pages/Conta'
 import './App.css'
-import { useEffect } from 'react/cjs/react.development'
 
 function App() {
 
@@ -35,7 +34,6 @@ function App() {
     root.style.setProperty('--BlackEWhite', 'black');
     root.style.setProperty('--CorFundoForm', 'white');
   }
-
 
   return (
     <>

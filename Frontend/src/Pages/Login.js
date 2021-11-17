@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import './Forms.css'
 
 function Login({ SetUsuario, SetToken }) {
@@ -7,6 +7,8 @@ function Login({ SetUsuario, SetToken }) {
         "usuario": "",
         "senha": "",
     });
+
+    const h = useHistory()
 
     function HandleSubmit(e) {
         e.preventDefault();
@@ -21,14 +23,15 @@ function Login({ SetUsuario, SetToken }) {
         }).then(async response => {
             const result = await response.json()
 
-            if (response.status === 200) {
-
-            }
-
             SetUsuario(result.usuario)
             SetToken(result.token)
+
+            if (response.status === 200) {
+                h.push("/pecas/cpu/1")
+            }
         })
     }
+
 
     return (
         <>
