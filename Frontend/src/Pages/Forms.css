@@ -27,7 +27,8 @@ button{
     margin: auto;
 }
 
-.redirect{
-    color: blue;
-    border-bottom: 1px solid blue;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

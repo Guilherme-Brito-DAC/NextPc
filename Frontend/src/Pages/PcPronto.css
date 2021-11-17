@@ -9,3 +9,10 @@
     display: flex;
     gap: 5rem;
 }
+
+.termos{
+    text-align: center;
+    display: flex;
+    gap: 5px; 
+    justify-content: center;
+}

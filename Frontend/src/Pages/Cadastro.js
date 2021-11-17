@@ -9,6 +9,8 @@ function Cadastro() {
         "usuario": "",
         "email": "",
         "senha": "",
+        "cpf": "",
+        "telefone": "",
     });
 
     function HandleSubmit(e) {
@@ -47,6 +49,10 @@ function Cadastro() {
                             <input type="email" className="form-control" value={UsuarioForm.email} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, email: e.target.value }) }} placeholder="Email" required />
                             <br />
                             <input type="password" className="form-control" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
+                            <br />
+                            <input type="number" className="form-control" value={UsuarioForm.cpf} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, cpf: e.target.value }) }} placeholder="CPF" required />
+                            <br />
+                            <input type="number" className="form-control" value={UsuarioForm.telefone} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, telefone: e.target.value }) }} placeholder="Telefone" required />
                         </div>
                         <br />
                         <button type="submit" className="btn btn-success">Cadastrar</button>
@@ -54,6 +60,13 @@ function Cadastro() {
                     <br />
                     <div className="link">
                         Já possui conta? <a className="redirect" href="login">Logar</a>
+                    </div>
+                    <br />
+                    <div className="eula">
+                        <p> Ao cadastrar em nosso site, você está de acordo com os termos de serviço e contrato do usuário </p>
+                        <div className="termos">
+                            <a href="">termos de serviço</a><a href="">contrato do usuário</a>
+                        </div>
                     </div>
                 </form>
             </div>
