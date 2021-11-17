@@ -30,58 +30,34 @@ function Cadastro() {
 
     return (
         <>
-            <form className="background" onSubmit={HandleSubmit}>
-
-                <div className="form">
-
-                    <div className="row">
-
-                        <div className="col">
-
-                            <input type="text" className="form-control" value={UsuarioForm.nome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, nome: e.target.value }) }} placeholder="Nome" aria-label="Nome" />
-
+            <div className="formulario">
+                <form className="background" onSubmit={HandleSubmit}>
+                    <div className="form">
+                        <div className="row">
+                            <div className="col">
+                                <input type="text" className="form-control" value={UsuarioForm.nome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, nome: e.target.value }) }} placeholder="Nome" aria-label="Nome" />
+                            </div>
+                            <div className="col">
+                                <input type="text" className="form-control" value={UsuarioForm.sobrenome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, sobrenome: e.target.value }) }} placeholder="Sobrenome" aria-label="Sobrenome" />
+                            </div>
                         </div>
-
+                        <br />
                         <div className="col">
-
-                            <input type="text" className="form-control" value={UsuarioForm.sobrenome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, sobrenome: e.target.value }) }} placeholder="Sobrenome" aria-label="Sobrenome" />
-
+                            <input type="text" className="form-control" value={UsuarioForm.usuario} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, usuario: e.target.value }) }} placeholder="Usuario" required />
+                            <br />
+                            <input type="email" className="form-control" value={UsuarioForm.email} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, email: e.target.value }) }} placeholder="Email" required />
+                            <br />
+                            <input type="password" className="form-control" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
                         </div>
-
-                    </div>
-
-                    <br />
-
-                    <div className="col">
-
-                        <input type="text" className="form-control" value={UsuarioForm.usuario} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, usuario: e.target.value }) }} placeholder="Usuario" required />
-
                         <br />
-
-                        <input type="email" className="form-control" value={UsuarioForm.email} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, email: e.target.value }) }} placeholder="Email" required />
-
-                        <br />
-
-                        <input type="password" className="form-control" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
-
+                        <button type="submit" className="btn btn-success">Cadastrar</button>
                     </div>
-
                     <br />
-
-                    <button type="submit" className="btn btn-success">Cadastrar</button>
-
-
-                </div>
-
-                <br />
-
-                <div className="link">
-
-                    Já possui conta? <a className="redirect" href="login">Logar</a>
-
-                </div>
-
-            </form>
+                    <div className="link">
+                        Já possui conta? <a className="redirect" href="login">Logar</a>
+                    </div>
+                </form>
+            </div>
         </>
     )
 

@@ -1,4 +1,4 @@
-import React , { useState } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './Components/Header'
 import Pecas from './Pages/Pecas'
@@ -9,6 +9,7 @@ import Login from './Pages/Login'
 import Cadastro from './Pages/Cadastro'
 import Conta from './Pages/Conta'
 import './App.css'
+import { useEffect } from 'react/cjs/react.development'
 
 function App() {
 
@@ -35,11 +36,12 @@ function App() {
     root.style.setProperty('--CorFundoForm', 'white');
   }
 
+
   return (
     <>
       <Router>
         <Header Usuario={Usuario} NightMode={NightMode} SetNightMode={SetNightMode} />
-        <br/>
+        <br />
         <div className="container">
           <Route exact path="/">
             <Home />
@@ -54,11 +56,11 @@ function App() {
             <PcPronto />
           </Route>
           <Route path="/login">
-          <Login SetUsuario={SetUsuario} SetToken={SetToken} />
-        </Route>
-        <Route path="/cadastro">
-          <Cadastro />
-        </Route>
+            <Login SetUsuario={SetUsuario} SetToken={SetToken} />
+          </Route>
+          <Route path="/cadastro">
+            <Cadastro />
+          </Route>
           <Route path="/conta">
             <Conta Usuario={Usuario} Token={Token} />
           </Route>

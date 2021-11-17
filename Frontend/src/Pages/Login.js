@@ -32,31 +32,33 @@ function Login({ SetUsuario, SetToken }) {
 
     return (
         <>
-            <form className="background" onSubmit={HandleSubmit}>
+            <div className="formulario">
+                <form className="background" onSubmit={HandleSubmit}>
 
-                <div className="form">
+                    <div className="form">
 
-                    <input type="text" className="form-control" value={UsuarioForm.usuario} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, usuario: e.target.value }) }} placeholder="Usuario" required />
+                        <input type="text" className="form-control" value={UsuarioForm.usuario} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, usuario: e.target.value }) }} placeholder="Usuario" required />
+
+                        <br />
+
+                        <input type="password" className="form-control" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
+
+                        <br />
+
+                        <button type="submit" className="btn btn-success">Login</button>
+
+                    </div>
 
                     <br />
 
-                    <input type="password" className="form-control" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
+                    <div className="link">
 
-                    <br />
+                        Não possui conta? <a className="redirect" href="cadastro">Cadastrar</a>
 
-                    <button type="submit" className="btn btn-success">Login</button>
+                    </div>
 
-                </div>
-
-                <br />
-
-                <div className="link">
-
-                    Não possui conta? <a className="redirect" href="cadastro">Cadastrar</a>
-
-                </div>
-
-            </form>
+                </form>
+            </div>
         </>
     )
 

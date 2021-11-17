@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m/2vGeDY9LCvowWLfB3g8tW0eQhmQR88HMDoejIb1I975vmNa4FnvrPdhAXVDTx+PKdk1uGfMm4G4sxJdvy9bw==",
+  "dgSpecHash": "6s87qMde+ZBvAXgpLg2Og57c8fm9GDHB/86WMmz+nWHRRiyDAIwnd57pFxcmaWV5KH9+11uAX88fygD3+16Hig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\Nextgear\\nextgear\\NextPc.csproj",
+  "projectFilePath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\NextPc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\guilh\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.12\\microsoft.aspnetcore.authentication.jwtbearer.5.0.12.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
