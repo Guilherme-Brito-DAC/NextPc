@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './Components/Header'
 import Pecas from './Pages/Pecas'
 import Home from './Pages/Home'
-import Comunidade from './Pages/Comunidade'
+import PcPronto from './Pages/PcPronto'
 import PCs from './Pages/PCs'
 import Login from './Pages/Login'
 import Cadastro from './Pages/Cadastro'
@@ -50,8 +50,8 @@ function App() {
           <Route path="/pecas/:peca/:pagina/:pesquisa?">
             <Pecas Tamanho={Tamanho} SetTamanho={SetTamanho} />
           </Route>
-          <Route path="/comunidade">
-            <Comunidade />
+          <Route path="/pcpronto">
+            <PcPronto />
           </Route>
           <Route path="/login">
           <Login SetUsuario={SetUsuario} SetToken={SetToken} />

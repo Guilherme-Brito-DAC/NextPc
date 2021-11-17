@@ -8,7 +8,7 @@ function PCs() {
     <>
 
       <div>
-        
+        teste
       </div>
     </>
   )

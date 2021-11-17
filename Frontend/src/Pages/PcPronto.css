@@ -1,0 +1,11 @@
+.background{
+    background-color: var(--CorFundoForm);
+    box-shadow: black;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.listaPC{
+    display: flex;
+    gap: 5rem;
+}

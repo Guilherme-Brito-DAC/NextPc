@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Forms.css'
 
 function Login({ SetUsuario, SetToken }) {
@@ -44,9 +45,17 @@ function Login({ SetUsuario, SetToken }) {
                     <br />
 
                     <button type="submit" className="btn btn-success">Login</button>
-                
+
                 </div>
-            
+
+                <br />
+
+                <div className="link">
+
+                    Não possui conta? <a className="redirect" href="cadastro">Cadastrar</a>
+
+                </div>
+
             </form>
         </>
     )
