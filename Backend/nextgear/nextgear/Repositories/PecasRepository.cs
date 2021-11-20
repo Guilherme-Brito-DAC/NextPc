@@ -24,6 +24,114 @@ namespace nextgear.Repositories
             Armazenamento = context.Set<Armazenamento>();
         }
 
+        public void CriarRam(Ram ram)
+        {
+            Ram.Add(ram);
+            context.SaveChanges();
+        }
+
+        public void EditarRam(Ram ram)
+        {
+            Ram.Update(ram);
+            context.SaveChanges();
+        }
+
+        public void DeletarRam(Ram ram)
+        {
+            Ram.Remove(ram);
+            context.SaveChanges();
+        }
+
+        public void CriarPlaca_mae(Placa_mae placa_mae)
+        {
+            Placa_mae.Add(placa_mae);
+            context.SaveChanges();
+        }
+
+        public void EditarPlaca_mae(Placa_mae placa_mae)
+        {
+            Placa_mae.Update(placa_mae);
+            context.SaveChanges();
+        }
+
+        public void DeletarPlaca_mae(Placa_mae placa_mae)
+        {
+            Placa_mae.Remove(placa_mae);
+            context.SaveChanges();
+        }
+
+        public void CriarCpu(Cpu cpu)
+        {
+            Cpu.Add(cpu);
+            context.SaveChanges();
+        }
+
+        public void EditarCpu(Cpu cpu)
+        {
+            Cpu.Update(cpu);
+            context.SaveChanges();
+        }
+
+        public void DeletarCpu(Cpu cpu)
+        {
+            Cpu.Remove(cpu);
+            context.SaveChanges();
+        }
+
+        public void CriarGpu(Gpu gpu)
+        {
+            Gpu.Add(gpu);
+            context.SaveChanges();
+        }
+
+        public void EditarGpu(Gpu gpu)
+        {
+            Gpu.Update(gpu);
+            context.SaveChanges();
+        }
+
+        public void DeletarGpu(Gpu gpu)
+        {
+            Gpu.Remove(gpu);
+            context.SaveChanges();
+        }
+
+        public void CriarFonte(Fonte fonte)
+        {
+            Fonte.Add(fonte);
+            context.SaveChanges();
+        }
+
+        public void EditarFonte(Fonte fonte)
+        {
+            Fonte.Update(fonte);
+            context.SaveChanges();
+        }
+
+        public void DeletarFonte(Fonte fonte)
+        {
+            Fonte.Remove(fonte);
+            context.SaveChanges();
+        }
+
+        public void CriarFonte(Armazenamento armazenamento)
+        {
+            Armazenamento.Add(armazenamento);
+            context.SaveChanges();
+        }
+
+        public void EditarFonte(Armazenamento armazenamento)
+        {
+            Armazenamento.Update(armazenamento);
+            context.SaveChanges();
+        }
+
+        public void DeletarFonte(Armazenamento armazenamento)
+        {
+            Armazenamento.Remove(armazenamento);
+            context.SaveChanges();
+        }
+
         public Paginacao<Ram> ListarRam(string pesquisa, int pagina)
         {
             var ram = string.IsNullOrEmpty(pesquisa) ? Ram.ToList() : Ram.Where(p => p.nome.Contains(pesquisa.ToLower()) == true).ToList();
