@@ -114,19 +114,19 @@ namespace nextgear.Repositories
             context.SaveChanges();
         }
 
-        public void CriarFonte(Armazenamento armazenamento)
+        public void CriarArmazenamento(Armazenamento armazenamento)
         {
             Armazenamento.Add(armazenamento);
             context.SaveChanges();
         }
 
-        public void EditarFonte(Armazenamento armazenamento)
+        public void EditarArmazenamento(Armazenamento armazenamento)
         {
             Armazenamento.Update(armazenamento);
             context.SaveChanges();
         }
 
-        public void DeletarFonte(Armazenamento armazenamento)
+        public void DeletarArmazenamento(Armazenamento armazenamento)
         {
             Armazenamento.Remove(armazenamento);
             context.SaveChanges();
