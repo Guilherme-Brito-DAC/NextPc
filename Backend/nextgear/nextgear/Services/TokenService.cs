@@ -1,12 +1,9 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using nextgear.Models;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace nextgear.Services
 {
@@ -21,6 +18,7 @@ namespace nextgear.Services
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.Name, usuario.usuario),
+                    new Claim(ClaimTypes.Role, usuario.role),
                 }),
                 Expires = DateTime.UtcNow.AddHours(8),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature)

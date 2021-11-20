@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using nextgear.Models;
 using nextgear.Repositories;
 using System;
 using System.Diagnostics;
@@ -7,7 +8,6 @@ using System.Diagnostics;
 namespace nextgear.Controllers
 {
     [ApiController]
-    [AllowAnonymous]
     [Route("api/pecas")]
     public class PecasController : Controller
     {
@@ -16,6 +16,14 @@ namespace nextgear.Controllers
         public PecasController(IPecasRepository iPecasRepository)
         {
             IPecasRepository = iPecasRepository;
+        }
+
+        [HttpPost]
+        [Route("ram")]
+        [Authorize(Roles = "admin")]
+        public IActionResult CriarRam()
+        {
+            return Ok();
         }
 
         [HttpGet]

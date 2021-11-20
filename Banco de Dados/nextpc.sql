@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 19-Nov-2021 às 17:14
+-- Tempo de geração: 20-Nov-2021 às 14:55
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -6353,10 +6353,19 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `email` varchar(250) NOT NULL,
   `senha` varchar(250) NOT NULL,
   `modoNoturno` tinyint(1) NOT NULL,
+  `role` varchar(250) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `usuario` (`usuario`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `sobrenome`, `usuario`, `imagem`, `email`, `senha`, `modoNoturno`, `role`) VALUES
+(1, 'Guilherme', 'Brito', 'Gui', '', 'guilherme@gmail.com', '123456', 0, 'admin'),
+(2, 'Felipe', 'Martins', 'Lipe', '', 'Felipe@gmail.com', '123456', 1, 'cliente');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

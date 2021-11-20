@@ -81,9 +81,12 @@ namespace nextgear
 
             app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
+
             app.UseRouting();
+
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
