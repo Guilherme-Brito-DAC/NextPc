@@ -50,7 +50,7 @@ function App() {
           <Route path="/pecas/:peca/:pagina/:pesquisa?">
             <Pecas Tamanho={Tamanho} SetTamanho={SetTamanho} />
           </Route>
-          <Route path="/pcpronto">
+          <Route path="/pcpronto/:pagina/:pesquisa?">
             <PcPronto />
           </Route>
           <Route path="/login">

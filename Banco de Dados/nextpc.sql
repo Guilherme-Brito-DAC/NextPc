@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 20-Nov-2021 às 14:55
+-- Tempo de geração: 22-Nov-2021 às 16:40
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -3452,7 +3452,14 @@ CREATE TABLE IF NOT EXISTS `pc` (
   `ram_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `pc`
+--
+
+INSERT INTO `pc` (`id`, `nome`, `imagem`, `armazenamento_id`, `cpu_id`, `gpu_id`, `fonte_id`, `placa_mae_id`, `ram_id`, `usuario_id`) VALUES
+(1, 'Pc do GUIGUI', 'https://cdna.pcpartpicker.com/static/forever/images/product/ec48e16ee4d6629045cfc4d71c649746.256p.jpg', 1, 1, 1081, 100, 1, 37, 1);
 
 -- --------------------------------------------------------
 

@@ -18,6 +18,9 @@ namespace nextgear.Formatters
         public PcView PcToPcView(Pc Pc)
         {
             return new PcView(
+                Pc.id,
+                Pc.nome,
+                Pc.imagem,
                 IPecasRepository.ListarUmArmazenamento(Pc.armazenamento_id),
                 IPecasRepository.ListarUmaCpu(Pc.cpu_id),
                 IPecasRepository.ListarUmaGpu(Pc.gpu_id),
@@ -35,6 +38,9 @@ namespace nextgear.Formatters
             foreach (var Pc in Pcs)
             {
                 resultado.Add(new PcView(
+                    Pc.id,
+                    Pc.nome,
+                    Pc.imagem,
                     IPecasRepository.ListarUmArmazenamento(Pc.armazenamento_id),
                     IPecasRepository.ListarUmaCpu(Pc.cpu_id),
                     IPecasRepository.ListarUmaGpu(Pc.gpu_id),

@@ -7,8 +7,9 @@ function PCs() {
   return (
     <>
 
-      <div>
-        <div className="background">
+
+      {/* <div>
+       <div className="background">
           <div className="construcao">
             <div className="peças">
               <h5>Processador</h5>
@@ -121,7 +122,7 @@ function PCs() {
           <h5>TOTAL:</h5>
           <h5>R$ XXXX,XX</h5>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

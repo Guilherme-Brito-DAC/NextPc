@@ -1,18 +1,31 @@
-.background{
-    background-color: var(--CorFundoForm);
-    box-shadow: black;
-    border-radius: 10px;
-    width: 100%;
+.pcs{
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 2rem;
+    padding: 0;
 }
 
-.listaPC{
-    display: flex;
-    gap: 5rem;
+#preco{
+    font-weight: 600;
 }
 
-.termos{
-    text-align: center;
-    display: flex;
-    gap: 5px; 
-    justify-content: center;
+.card{
+    width: 18rem;
+    padding: 1rem;
+}
+
+.card ul{
+    display:block;
+    margin: 0; 
+    padding: 0;
+    text-align: start;
+}
+
+.card ul li{
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden;
 }
