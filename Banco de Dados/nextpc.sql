@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 22-Nov-2021 às 16:40
+-- Tempo de geração: 22-Nov-2021 às 19:13
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -3452,14 +3452,21 @@ CREATE TABLE IF NOT EXISTS `pc` (
   `ram_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `pc`
 --
 
 INSERT INTO `pc` (`id`, `nome`, `imagem`, `armazenamento_id`, `cpu_id`, `gpu_id`, `fonte_id`, `placa_mae_id`, `ram_id`, `usuario_id`) VALUES
-(1, 'Pc do GUIGUI', 'https://cdna.pcpartpicker.com/static/forever/images/product/ec48e16ee4d6629045cfc4d71c649746.256p.jpg', 1, 1, 1081, 100, 1, 37, 1);
+(1, 'Pc do GUIGUI', 'https://cdna.pcpartpicker.com/static/forever/images/product/ec48e16ee4d6629045cfc4d71c649746.256p.jpg', 1, 1, 1081, 100, 1, 37, 1),
+(2, 'Pc Gamer Nave Atmos', 'https://images-americanas.b2w.io/produtos/01/00/img/2449852/3/2449852377_1GG.jpg', 9, 8, 1047, 110, 2, 150, 2),
+(3, 'Pc Gamer Genesis', 'https://www.pcspecialist.pt/images/landing/pcs/liquid-series/lian-li-s1.png', 8, 1, 1035, 103, 1, 38, 1),
+(4, 'Pc Gamer Ninja', 'https://img.terabyteshop.com.br/produto/g/gabinete-gamer-t-dagger-p03b-mid-tower-rgb-black-atx-sem-fonte-sem-fan-tgc-p03b_114996.jpg', 25, 30, 1032, 119, 29, 52, 2),
+(5, 'Pc Storm', 'https://images.kabum.com.br/produtos/fotos/sync_mirakl/164983/Computador-Gamer-1000-Pentium-G5400-3-7GHZ-8A-GER-MEM-8GB-DDR4-HD-1TB-GTX-750TI-2GB-Fonte-400W-80-PLUS-White_1622830769_g.jpg', 52, 63, 1024, 111, 32, 94, 2),
+(6, 'Pc Gamer Shadow', 'https://w1.ezcdn.com.br/microgem/fotos/grande/1022fg1/gabinete-gamer-pcyes-tank-vermelho-com-3-fans-led-vermelho-lateral-em-vidro-temperado-tanpvvm3fcvt.jpg', 21, 22, 1044, 111, 15, 42, 1),
+(7, 'Pc Gamer Netherlands', 'https://images.kabum.com.br/produtos/fotos/sync_mirakl/168927/Pc-Gamer-Completo-F-cil-Intel-Core-I5-terceira-Gera-o-8gb-Gtx-1650-4gb-Hd-500gb-Fonte-500w-Monitor-23-Aoc-Fhd-Hdmi_1629471569_g.jpg', 26, 7, 1047, 111, 13, 56, 1),
+(8, 'Pc Gamer Ice Age', 'https://www.oficinadosbits.com.br/fotos/extragrande/1208fe1/pc-gamer-bits-diamond-storm-intel-core-i5-8gb-hd-1tb-geforce-gtx-1050-ti-4gb-gabinete-com-led-rgb.jpg', 46, 1, 1032, 104, 29, 114, 1);
 
 -- --------------------------------------------------------
 
