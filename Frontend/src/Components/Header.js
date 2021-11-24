@@ -2,7 +2,7 @@ import React from 'react'
 import { NavbarBrand, NavLink } from 'reactstrap';
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import Logomarca from '../imgs/Logo.png'
+import Logomarca from '../imgs/Logo-no-bg.png'
 import './Header.css'
 
 export default function Header(Prop) {

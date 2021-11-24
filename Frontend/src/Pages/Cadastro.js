@@ -36,23 +36,23 @@ function Cadastro() {
                     <div className="form">
                         <div className="row">
                             <div className="col">
-                                <input type="text" className="form-control" value={UsuarioForm.nome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, nome: e.target.value }) }} placeholder="Nome" aria-label="Nome" />
+                                <input type="text" className="input" value={UsuarioForm.nome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, nome: e.target.value }) }} placeholder="Nome" aria-label="Nome" />
                             </div>
                             <div className="col">
-                                <input type="text" className="form-control" value={UsuarioForm.sobrenome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, sobrenome: e.target.value }) }} placeholder="Sobrenome" aria-label="Sobrenome" />
+                                <input type="text" className="input" value={UsuarioForm.sobrenome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, sobrenome: e.target.value }) }} placeholder="Sobrenome" aria-label="Sobrenome" />
                             </div>
                         </div>
                         <br />
                         <div className="col">
-                            <input type="text" className="form-control" value={UsuarioForm.usuario} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, usuario: e.target.value }) }} placeholder="Usuario" required />
+                            <input type="text" className="input" value={UsuarioForm.usuario} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, usuario: e.target.value }) }} placeholder="Usuario" required />
                             <br />
-                            <input type="email" className="form-control" value={UsuarioForm.email} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, email: e.target.value }) }} placeholder="Email" required />
+                            <input type="email" className="input" value={UsuarioForm.email} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, email: e.target.value }) }} placeholder="Email" required />
                             <br />
-                            <input type="password" className="form-control" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
+                            <input type="password" className="input" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
                             <br />
-                            <input type="number" className="form-control" value={UsuarioForm.cpf} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, cpf: e.target.value }) }} placeholder="CPF" required />
+                            <input type="number" className="input" value={UsuarioForm.cpf} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, cpf: e.target.value }) }} placeholder="CPF" required />
                             <br />
-                            <input type="number" className="form-control" value={UsuarioForm.telefone} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, telefone: e.target.value }) }} placeholder="Telefone" required />
+                            <input type="number" className="input" value={UsuarioForm.telefone} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, telefone: e.target.value }) }} placeholder="Telefone" required />
                         </div>
                         <br />
                         <button type="submit" className="btn btn-success">Cadastrar</button>

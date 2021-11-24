@@ -37,34 +37,27 @@ function Login({ SetUsuario, SetToken }) {
         <>
             <div className="formulario">
                 <form className="background" onSubmit={HandleSubmit}>
-
                     <div className="form">
-
-                        <input type="text" className="form-control" value={UsuarioForm.usuario} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, usuario: e.target.value }) }} placeholder="Usuario" required />
-
-                        <br />
-
-                        <input type="password" className="form-control" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
-
-                        <br />
-
+                        <div className="col">
+                            <div className="row">
+                                <input type="text" className="input" value={UsuarioForm.usuario} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, usuario: e.target.value }) }} placeholder="Usuario" required />
+                            </div>
+                            <br />
+                            <div className="row">
+                                <input type="password" className="input" value={UsuarioForm.senha} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, senha: e.target.value }) }} placeholder="Senha" required />
+                            </div>
+                            <br />
+                        </div>
                         <button type="submit" className="btn btn-success">Login</button>
-
                     </div>
-
                     <br />
-
                     <div className="link">
-
                         Não possui conta? <a className="redirect" href="cadastro">Cadastrar</a>
-
                     </div>
-
                 </form>
             </div>
         </>
     )
-
 }
 
 export default Login
