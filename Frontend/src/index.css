@@ -4577,6 +4577,7 @@ textarea.form-control-lg {
 }
 
 .card-title {
+  color:var(--CorFonte);
   margin-bottom: 0.5rem;
 }
 

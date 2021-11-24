@@ -4,13 +4,14 @@ import Pagination from '../Components/Pagination'
 import Erro from '../Components/Erro'
 import './PcPronto.css'
 
-function PcPronto() {
+function PcPronto(prop) {
 
   const [Loading, SetLoading] = useState(true)
   const [Pagina, SetPagina] = useState(1)
   const [Pesquisa, SetPesquisa] = useState("")
   const [Pcs, SetPcs] = useState([])
   const [Info, SetInfo] = useState()
+  const [SearchInput, SetInput] = useState("")
   const { pagina, pesquisa } = useParams()
 
   useEffect(() => {
@@ -33,12 +34,11 @@ function PcPronto() {
       },
     }).then(response => response.json())
       .then(result => {
-        console.log(result)
         SetInfo(result)
         SetPcs(result.resultado)
       })
     SetLoading(false)
-  }, [Pagina, pesquisa])
+  }, [Pagina, Pesquisa])
 
   function FormatarPreco(preco) {
     var formatter = new Intl.NumberFormat(undefined, {
@@ -48,22 +48,44 @@ function PcPronto() {
     return formatter.format(preco);
   }
 
+  function HandleSubmit(e) {
+    e.preventDefault()
+    SetPagina(1)
+    SetPesquisa(SearchInput)
+  }
+
+  function HandleSize(event) {
+    const root = document.querySelector(':root')
+    prop.SetTamanho(event.target.value)
+    root.style.setProperty('--TamanhoItem', event.target.value + 'rem')
+  }
+
   return (
     <>
+      <form className="pesquisaForm" onSubmit={(e) => HandleSubmit(e)}>
+        <img src="https://img.icons8.com/ios-glyphs/25/9e9ea7/search--v1.png" alt="" />
+        <input type="text" placeholder="Pesquisa uma Peça" value={SearchInput} onChange={(e) => SetInput(e.target.value)} />
+      </form>
+      {
+        Info !== null && Pcs.length !== 0 ?
+          <>
+            <Pagination info={Info} SetPagina={SetPagina} />
+          </>
+          :
+          <Erro />
+      }
+      <div className="filtros">
+        <div className="tamanho">
+          <label>Tamanho dos itens : </label>
+          <input type="range" className="form-control-range" min="12" max="30" value={prop.Tamanho} onChange={HandleSize} />
+        </div>
+      </div>
       <div className="pcs">
         {
           Loading &&
           <div style={{ width: "100%", display: "flex", justifyContent: "center", marginTop: "100px" }}>
             <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
           </div>
-        }
-        {
-          Info !== null && Pcs.length !== 0 ?
-            <>
-              <Pagination info={Info} SetPagina={SetPagina} />
-            </>
-            :
-            <Erro />
         }
         {
           Pcs.map(function (p, i) {
