@@ -18,15 +18,19 @@ function Conta({ Usuario, Token }) {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <input type="text" className="form-control" placeholder="Nome" aria-label="Nome" />
+                            <input type="text" className="input" placeholder="Nome" aria-label="Nome" />
                         </div>
                         <div className="col">
-                            <input type="text" className="form-control" placeholder="Sobrenome" aria-label="Sobrenome" />
+                            <input type="text" className="input" placeholder="Sobrenome" aria-label="Sobrenome" />
                         </div>
                     </div>
-                    <input type="text" className="form-control" placeholder="Usuario" required />
-                    <input type="email" className="form-control" placeholder="Email" required />
-                    <input type="password" className="form-control" placeholder="Senha" required />
+                    <br />
+                    <input type="text" className="input" placeholder="Usuario" required />
+                    <br />
+                    <input type="email" className="input" placeholder="Email" required />
+                    <br />
+                    <input type="password" className="input" placeholder="Senha" required />
+                    <br />
                     <button type="submit" className="btn btn-success">Login</button>
                 </div>
             </div>
