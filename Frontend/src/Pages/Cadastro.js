@@ -11,6 +11,9 @@ function Cadastro() {
         "senha": "",
         "cpf": "",
         "telefone": "",
+        "role": "cliente",
+        "imagem": "",
+        "modoNoturno": false
     });
 
     function HandleSubmit(e) {
