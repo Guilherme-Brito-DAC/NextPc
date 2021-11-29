@@ -9,6 +9,8 @@ import Login from './Pages/Login'
 import Cadastro from './Pages/Cadastro'
 import Conta from './Pages/Conta'
 import './App.css'
+import Editar from './Pages/Editar'
+import Excluir from './Pages/Excluir'
 
 function App() {
 
@@ -61,6 +63,12 @@ function App() {
           </Route>
           <Route path="/conta">
             <Conta Usuario={Usuario} Token={Token} />
+          </Route>
+          <Route path="/editar">
+            <Editar Usuario={Usuario} Token={Token} />
+          </Route>
+          <Route path="/excluir">
+            <Excluir Usuario={Usuario} Token={Token} />
           </Route>
         </div>
       </Router>

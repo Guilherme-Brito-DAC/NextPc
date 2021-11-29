@@ -18,3 +18,28 @@
     justify-content: center;
     width: 100%;
 }
+
+.btn_edit{
+    background-color: orange;
+    padding: 1rem;
+    box-shadow: black;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 4rem;
+    float: left;
+}
+
+.btn_excluir{
+    background-color: red;
+    padding: 1rem;
+    box-shadow: black;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 4rem;
+    float: left;
+}
+
+.links{
+    text-align: center;
+    justify-content: center;
+}
