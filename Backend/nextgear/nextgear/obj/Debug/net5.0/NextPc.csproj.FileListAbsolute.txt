@@ -87,3 +87,4 @@ C:\Users\user\Desktop\Stuff\Cotebas\PIT\NextGear\Backend\Nextgear\nextgear\obj\D
 C:\Users\user\Desktop\Stuff\Cotebas\PIT\NextGear\Backend\Nextgear\nextgear\obj\Debug\net5.0\ref\NextPc.dll
 C:\Users\user\Desktop\Stuff\Cotebas\PIT\NextGear\Backend\Nextgear\nextgear\obj\Debug\net5.0\NextPc.pdb
 C:\Users\user\Desktop\Stuff\Cotebas\PIT\NextGear\Backend\Nextgear\nextgear\obj\Debug\net5.0\NextPc.genruntimeconfig.cache
+C:\Users\guilh\Documents\GitHub\NextGear\Backend\nextgear\nextgear\obj\Debug\net5.0\NextPc.csproj.CopyComplete

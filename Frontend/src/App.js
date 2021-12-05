@@ -9,8 +9,8 @@ import Login from './Pages/Login'
 import Cadastro from './Pages/Cadastro'
 import Conta from './Pages/Conta'
 import './App.css'
-import Editar from './Pages/Editar'
-import Excluir from './Pages/Excluir'
+import { useEffect } from 'react/cjs/react.development'
+import Admin from './Pages/Admin'
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
   const [Token, SetToken] = useState("");
   const [NightMode, SetNightMode] = useState(false);
   const [Tamanho, SetTamanho] = useState("17 rem");
+
   const root = document.querySelector(':root');
 
   if (NightMode) {
@@ -37,10 +38,33 @@ function App() {
     root.style.setProperty('--CorFundoForm', 'white');
   }
 
+  useEffect(()=>{
+    if(sessionStorage.getItem("token"))
+    {
+      SetToken(sessionStorage.getItem("token"))
+      SetUsuario({
+        "nome" : sessionStorage.getItem("nome"),
+        "sobrenome" : sessionStorage.getItem("sobrenom"),
+        "usuario" : sessionStorage.getItem("usuario"),
+        "email" : sessionStorage.getItem("email"),
+        "telefone" : sessionStorage.getItem("telefone"),
+        "cpf" : sessionStorage.getItem("cpf"),
+        "senha" : sessionStorage.getItem("senha"),
+      })
+    }
+  },[])
+
+  function Deslogar(){
+    SetUsuario("")
+    SetToken(null)
+    sessionStorage.clear()
+    window.location.reload()
+  }
+
   return (
     <>
       <Router>
-        <Header Usuario={Usuario} NightMode={NightMode} SetNightMode={SetNightMode} />
+        <Header Usuario={Usuario} NightMode={NightMode} SetNightMode={SetNightMode} Deslogar={Deslogar} />
         <br />
         <div className="container">
           <Route exact path="/">
@@ -48,6 +72,9 @@ function App() {
           </Route>
           <Route path="/pc">
             <PCs />
+          </Route>
+          <Route path="/admin">
+            <Admin />
           </Route>
           <Route path="/pecas/:peca/:pagina/:pesquisa?">
             <Pecas Tamanho={Tamanho} SetTamanho={SetTamanho} />
@@ -59,16 +86,10 @@ function App() {
             <Login SetUsuario={SetUsuario} SetToken={SetToken} />
           </Route>
           <Route path="/cadastro">
-            <Cadastro />
+            <Cadastro SetUsuario={SetUsuario} SetToken={SetToken} />
           </Route>
           <Route path="/conta">
-            <Conta Usuario={Usuario} Token={Token} />
-          </Route>
-          <Route path="/editar">
-            <Editar Usuario={Usuario} Token={Token} />
-          </Route>
-          <Route path="/excluir">
-            <Excluir Usuario={Usuario} Token={Token} />
+            <Conta Usuario={Usuario} SetUsuario={SetUsuario} Token={Token} Deslogar={Deslogar}/>
           </Route>
         </div>
       </Router>

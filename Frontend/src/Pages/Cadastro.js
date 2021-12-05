@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import './Forms.css'
+import Swal from 'sweetalert2'
 
-function Cadastro() {
+function Cadastro({ SetUsuario, SetToken }) {
 
     const [UsuarioForm, SetUsuarioForm] = useState({
         "nome": "",
@@ -16,6 +18,8 @@ function Cadastro() {
         "modoNoturno": false
     });
 
+    const h = useHistory()
+
     function HandleSubmit(e) {
         e.preventDefault();
 
@@ -26,10 +30,20 @@ function Cadastro() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(UsuarioForm)
-        }).then(response => response.json())
-            .then(result => {
-                console.log(result)
-            })
+        }).then(async response => {
+            const result = await response.json()
+    
+            if (response.status === 200) {
+                SetUsuario(result.usuario)
+                SetToken(result.token)
+                Swal.fire('Usuário cadastrado com sucesso!')
+                h.push("/pecas/cpu/1")
+            }
+            else
+            {
+                Swal.fire('Aconteceu algum erro, tente novamente mais tarde')
+            }
+        })
     }
 
     return (
@@ -68,7 +82,7 @@ function Cadastro() {
                     <div className="eula">
                         <p> Ao cadastrar em nosso site, você está de acordo com os termos de serviço e contrato do usuário </p>
                         <div className="termos">
-                            <a href="">termos de serviço</a><a href="">contrato do usuário</a>
+                            <a href="https://images3.memedroid.com/images/UPLOADED439/60d4835ccf9b4.jpeg">termos de serviço</a><a href="https://images3.memedroid.com/images/UPLOADED439/60d4835ccf9b4.jpeg">contrato do usuário</a>
                         </div>
                     </div>
                 </form>

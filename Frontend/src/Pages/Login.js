@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import './Forms.css'
+import Swal from 'sweetalert2'
 
 function Login({ SetUsuario, SetToken }) {
     const [UsuarioForm, SetUsuarioForm] = useState({
@@ -22,12 +23,24 @@ function Login({ SetUsuario, SetToken }) {
             body: JSON.stringify(UsuarioForm)
         }).then(async response => {
             const result = await response.json()
-
-            SetUsuario(result.usuario)
-            SetToken(result.token)
-
+            
             if (response.status === 200) {
+                sessionStorage.setItem("token", result.token);
+                sessionStorage.setItem("nome", result.usuario.nome);
+                sessionStorage.setItem("sobrenome", result.usuario.sobrenome);
+                sessionStorage.setItem("usuario", result.usuario.usuario);
+                sessionStorage.setItem("email", result.usuario.email);
+                sessionStorage.setItem("cpf", result.usuario.cpf);
+                sessionStorage.setItem("telefone", result.usuario.cpf);
+                sessionStorage.setItem("senha", result.usuario.senha);
+    
+                SetUsuario(result.usuario)
+                SetToken(result.token)
                 h.push("/pecas/cpu/1")
+            }
+            else
+            {
+                Swal.fire('Usuário ou senha inválidos!')
             }
         })
     }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Logomarca from '../imgs/Logomarca-no-bg-no-margin.png'
 import './Home.css'
 

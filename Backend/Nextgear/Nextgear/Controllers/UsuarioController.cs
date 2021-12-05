@@ -59,7 +59,6 @@ namespace nextgear.Controllers
                         var user = IUsuarioRepository.ListarUmUsuario(Usuario.usuario, Usuario.senha);
                         Usuario.role = user.role;
                         var token = TokenService.GerarToken(Usuario);
-                        user.senha = "";
 
                         var retorno = new
                         {
@@ -97,7 +96,7 @@ namespace nextgear.Controllers
                 {
                     IUsuarioRepository.Editar(Usuario);
 
-                    return Ok(new[] { "Usuario editado com sucesso!" });
+                    return Ok(IUsuarioRepository.ListarUmUsuario(Usuario.id));
                 }
 
                 string error = string.Join("; ", ModelState.Values

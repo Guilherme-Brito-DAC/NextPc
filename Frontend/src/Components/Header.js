@@ -4,12 +4,30 @@ import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Logomarca from '../imgs/Logo-no-bg.png'
 import './Header.css'
+import Swal from 'sweetalert2'
 
 export default function Header(Prop) {
+
+  function Sair(){
+    Swal.fire({
+      title: 'Deseja sair?',
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Prop.Deslogar()
+      } else if (result.isDenied) {
+        
+      }
+    })
+  }
+
   function VerificaUsuario() {
     if (Prop.Usuario !== null) {
-      return <div>
+      return <div className="loginECadastro">
         <NavLink tag={Link} className="btn btn-success" title="Conta" to="/conta" >Conta</NavLink>
+        <button onClick={()=> Sair()} className="Deslogar">Sair</button>
       </div>
     }
     else {
@@ -60,7 +78,9 @@ export default function Header(Prop) {
             <button type="button" className="ModoNoturno" onClick={() => Prop.SetNightMode(!Prop.NightMode)} data-bs-toggle="tooltip" data-bs-placement="bottom" title="Modo Noturno">
               {VerificaModoNoturno()}
             </button>
-            {VerificaUsuario()}
+            {
+               VerificaUsuario()
+            }
           </div>
         </nav>
       </>
