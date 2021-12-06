@@ -57,6 +57,11 @@ function Conta({ Usuario, SetUsuario, Token, Deslogar }) {
                 console.log(result)
                 SetUsuario(result)
             })
+        Swal.fire(
+            'Dados salvos!',
+            'Seus novos dados já foram salvos!',
+            'success'
+        )
     }
 
     function Deletar(e) {
@@ -98,7 +103,7 @@ function Conta({ Usuario, SetUsuario, Token, Deslogar }) {
                             <input type="text" className="input" value={UsuarioForm.nome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, nome: e.target.value }) }} placeholder="Nome" aria-label="Nome" required />
                         </div>
                         <div className="col">
-                            <input type="text" className="input" value={UsuarioForm.sobrenome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, sobrenome: e.target.value }) }} placeholder="Sobrenome" aria-label="Sobrenome"  />
+                            <input type="text" className="input" value={UsuarioForm.sobrenome} onChange={(e) => { SetUsuarioForm({ ...UsuarioForm, sobrenome: e.target.value }) }} placeholder="Sobrenome" aria-label="Sobrenome" />
                         </div>
                     </div>
                     <br />
