@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\NextPCTestes\\NextPCTestes.csproj": {}
+    "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\NextPCTestes\\NextPCTestes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\NextPc.csproj": {
+    "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\nextgear\\NextPc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\NextPc.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\nextgear\\NextPc.csproj",
         "projectName": "NextPc",
-        "projectPath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\NextPc.csproj",
-        "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\nextgear\\NextPc.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\nextgear\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\guilh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,21 +91,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\NextPCTestes\\NextPCTestes.csproj": {
+    "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\NextPCTestes\\NextPCTestes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\NextPCTestes\\NextPCTestes.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\NextPCTestes\\NextPCTestes.csproj",
         "projectName": "NextPCTestes",
-        "projectPath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\NextPCTestes\\NextPCTestes.csproj",
-        "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\NextPCTestes\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\NextPCTestes\\NextPCTestes.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\NextPCTestes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\guilh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -119,8 +119,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\NextPc.csproj": {
-                "projectPath": "C:\\Users\\guilh\\Documents\\GitHub\\NextGear\\Backend\\nextgear\\nextgear\\NextPc.csproj"
+              "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\nextgear\\NextPc.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\Stuff\\Cotebas\\PIT\\NextGear\\Backend\\Nextgear\\nextgear\\NextPc.csproj"
               }
             }
           }
@@ -179,7 +179,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
