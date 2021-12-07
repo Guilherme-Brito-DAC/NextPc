@@ -43,8 +43,9 @@ function App() {
     {
       SetToken(sessionStorage.getItem("token"))
       SetUsuario({
+        "id" : sessionStorage.getItem("id"),
         "nome" : sessionStorage.getItem("nome"),
-        "sobrenome" : sessionStorage.getItem("sobrenom"),
+        "sobrenome" : sessionStorage.getItem("sobrenome"),
         "usuario" : sessionStorage.getItem("usuario"),
         "email" : sessionStorage.getItem("email"),
         "telefone" : sessionStorage.getItem("telefone"),

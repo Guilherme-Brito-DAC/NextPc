@@ -34,6 +34,15 @@ function Cadastro({ SetUsuario, SetToken }) {
             const result = await response.json()
     
             if (response.status === 200) {
+                sessionStorage.setItem("token", result.token);
+                sessionStorage.setItem("id", result.usuario.id);
+                sessionStorage.setItem("nome", result.usuario.nome);
+                sessionStorage.setItem("sobrenome", result.usuario.sobrenome);
+                sessionStorage.setItem("usuario", result.usuario.usuario);
+                sessionStorage.setItem("email", result.usuario.email);
+                sessionStorage.setItem("cpf", result.usuario.cpf);
+                sessionStorage.setItem("telefone", result.usuario.cpf);
+                sessionStorage.setItem("senha", result.usuario.senha);
                 SetUsuario(result.usuario)
                 SetToken(result.token)
                 Swal.fire('Usuário cadastrado com sucesso!')

@@ -57,6 +57,7 @@ function Conta({ Usuario, SetUsuario, Token, Deslogar }) {
                 console.log(result)
                 SetUsuario(result)
             })
+            
         Swal.fire(
             'Dados salvos!',
             'Seus novos dados já foram salvos!',
@@ -83,7 +84,8 @@ function Conta({ Usuario, SetUsuario, Token, Deslogar }) {
                     },
                     body: JSON.stringify(Usuario)
                 }).then(response => response.json())
-                    .then(result => {
+                    .then(resultado => {
+                        console.log(resultado)
                         Deslogar()
                     })
             } else if (result.isDenied) {
